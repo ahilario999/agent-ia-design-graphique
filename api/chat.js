@@ -1,5 +1,5 @@
 // Vercel Serverless Function - Proxy vers Google Gemini API
-// Utilise le SDK officiel @google/generative-ai (même approche que SemioScope/Ascenseur)
+// Utilise le SDK officiel @google/generative-ai
 
 import { GoogleGenerativeAI } from '@google/generative-ai';
 
@@ -111,19 +111,26 @@ export default async function handler(req, res) {
   }
 
   const apiKey = process.env.GEMINI_API_KEY;
+  console.log('[CHAT] API Key présente:', !!apiKey);
+
   if (!apiKey) {
+    console.error('[CHAT] ERREUR: GEMINI_API_KEY non configurée');
     return res.status(500).json({ error: 'GEMINI_API_KEY not configured' });
   }
 
   try {
     const { messages } = req.body;
+    console.log('[CHAT] Messages reçus:', messages?.length);
 
     if (!messages || !Array.isArray(messages)) {
       return res.status(400).json({ error: 'Messages array required' });
     }
 
     // Initialiser le SDK Google Generative AI
+    console.log('[CHAT] Initialisation GoogleGenerativeAI...');
     const genAI = new GoogleGenerativeAI(apiKey);
+
+    console.log('[CHAT] Récupération du modèle gemini-2.0-flash...');
     const model = genAI.getGenerativeModel({
       model: 'gemini-2.0-flash',
       systemInstruction: SYSTEM_PROMPT,
@@ -140,8 +147,10 @@ export default async function handler(req, res) {
 
     // Le dernier message est celui qu'on envoie
     const lastMessage = messages[messages.length - 1].text;
+    console.log('[CHAT] Dernier message:', lastMessage.substring(0, 50) + '...');
 
     // Démarrer un chat avec l'historique
+    console.log('[CHAT] Démarrage du chat...');
     const chat = model.startChat({
       history,
       generationConfig: {
@@ -152,12 +161,16 @@ export default async function handler(req, res) {
     });
 
     // Envoyer le dernier message et obtenir la réponse
+    console.log('[CHAT] Envoi du message à Gemini...');
     const result = await chat.sendMessage(lastMessage);
     const reply = result.response.text();
 
+    console.log('[CHAT] Réponse reçue:', reply.substring(0, 50) + '...');
     return res.status(200).json({ reply });
+
   } catch (error) {
-    console.error('Server error:', error);
+    console.error('[CHAT] ERREUR:', error.message);
+    console.error('[CHAT] Stack:', error.stack);
     return res.status(200).json({
       reply: `Désolé, j'ai eu un petit problème technique. Essaie encore dans quelques secondes, ou contacte monsieur Hilario: ahilar@lacitec.on.ca`,
       debug: error.message,
