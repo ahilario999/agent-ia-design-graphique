@@ -127,7 +127,7 @@ export default async function handler(req, res) {
     }));
 
     const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`,
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`,
       {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -153,8 +153,11 @@ export default async function handler(req, res) {
 
     if (!response.ok) {
       const errorData = await response.text();
-      console.error('Gemini API error:', errorData);
-      return res.status(response.status).json({ error: 'Gemini API error', details: errorData });
+      console.error('Gemini API error:', response.status, errorData);
+      return res.status(200).json({
+        reply: `[Erreur API ${response.status}] L'agent n'est pas disponible en ce moment. Contacte monsieur Hilario: ahilar@lacitec.on.ca`,
+        debug: errorData,
+      });
     }
 
     const data = await response.json();
