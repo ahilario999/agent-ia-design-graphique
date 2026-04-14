@@ -1,5 +1,7 @@
 // Vercel Serverless Function - Proxy vers Google Gemini API
-// Sécurise la clé API côté serveur
+// Utilise le SDK officiel @google/generative-ai (même approche que SemioScope/Ascenseur)
+
+import { GoogleGenerativeAI } from '@google/generative-ai';
 
 const SYSTEM_PROMPT = `Tu es un agent IA convivial et rassurant pour le programme Design Graphique (61508 & 61777) au Collège La Cité à Ottawa.
 
@@ -120,55 +122,45 @@ export default async function handler(req, res) {
       return res.status(400).json({ error: 'Messages array required' });
     }
 
-    // Build Gemini conversation format
-    const geminiContents = messages.map((msg) => ({
-      role: msg.role === 'user' ? 'user' : 'model',
-      parts: [{ text: msg.text }],
-    }));
+    // Initialiser le SDK Google Generative AI
+    const genAI = new GoogleGenerativeAI(apiKey);
+    const model = genAI.getGenerativeModel({
+      model: 'gemini-2.0-flash',
+      systemInstruction: SYSTEM_PROMPT,
+    });
 
-    const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`,
-      {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          system_instruction: {
-            parts: [{ text: SYSTEM_PROMPT }],
-          },
-          contents: geminiContents,
-          generationConfig: {
-            temperature: 0.7,
-            topP: 0.9,
-            maxOutputTokens: 1024,
-          },
-          safetySettings: [
-            { category: 'HARM_CATEGORY_HARASSMENT', threshold: 'BLOCK_NONE' },
-            { category: 'HARM_CATEGORY_HATE_SPEECH', threshold: 'BLOCK_NONE' },
-            { category: 'HARM_CATEGORY_SEXUALLY_EXPLICIT', threshold: 'BLOCK_NONE' },
-            { category: 'HARM_CATEGORY_DANGEROUS_CONTENT', threshold: 'BLOCK_NONE' },
-          ],
-        }),
-      }
-    );
-
-    if (!response.ok) {
-      const errorData = await response.text();
-      console.error('Gemini API error:', response.status, errorData);
-      return res.status(200).json({
-        reply: `[Erreur API ${response.status}] L'agent n'est pas disponible en ce moment. Contacte monsieur Hilario: ahilar@lacitec.on.ca`,
-        debug: errorData,
+    // Construire l'historique de conversation pour le chat
+    const history = [];
+    for (let i = 0; i < messages.length - 1; i++) {
+      history.push({
+        role: messages[i].role === 'user' ? 'user' : 'model',
+        parts: [{ text: messages[i].text }],
       });
     }
 
-    const data = await response.json();
+    // Le dernier message est celui qu'on envoie
+    const lastMessage = messages[messages.length - 1].text;
 
-    const reply =
-      data.candidates?.[0]?.content?.parts?.[0]?.text ||
-      "Désolé, je n'ai pas pu générer une réponse. Essaie encore!";
+    // Démarrer un chat avec l'historique
+    const chat = model.startChat({
+      history,
+      generationConfig: {
+        temperature: 0.7,
+        topP: 0.9,
+        maxOutputTokens: 1024,
+      },
+    });
+
+    // Envoyer le dernier message et obtenir la réponse
+    const result = await chat.sendMessage(lastMessage);
+    const reply = result.response.text();
 
     return res.status(200).json({ reply });
   } catch (error) {
     console.error('Server error:', error);
-    return res.status(500).json({ error: 'Internal server error' });
+    return res.status(200).json({
+      reply: `Désolé, j'ai eu un petit problème technique. Essaie encore dans quelques secondes, ou contacte monsieur Hilario: ahilar@lacitec.on.ca`,
+      debug: error.message,
+    });
   }
 }
