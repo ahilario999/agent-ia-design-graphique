@@ -4,7 +4,7 @@
    Grille 6 colonnes · Glassmorphism · Advent Pro
    ============================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:wght@100;200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:wght@100;200;300;400;500;600;700&family=Open+Sans:wght@400;600&display=swap');
 
 /* --- Design Tokens --- */
 :root {
@@ -840,10 +840,35 @@ a:hover { opacity: 0.8; }
 .message__bubble {
   padding: 12px 16px;
   border-radius: 12px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  line-height: 1.55;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 400;
+  line-height: 1.65;
   word-wrap: break-word;
+}
+
+/* Paragraphes dans les bulles */
+.message__para {
+  margin: 0;
+}
+
+.message__para + .message__para {
+  margin-top: 10px;
+}
+
+/* Liens cliquables dans les bulles */
+.message__link {
+  color: inherit;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  word-break: break-all;
+  opacity: 0.9;
+}
+
+.message__link:hover {
+  opacity: 1;
+  text-decoration-thickness: 2px;
 }
 
 .message--agent .message__bubble {
@@ -905,8 +930,8 @@ a:hover { opacity: 0.8; }
   padding: 12px 18px;
   border: 1px solid rgba(255,255,255,0.15);
   border-radius: 22px;
-  font-size: 1.1rem;
-  font-family: var(--font-primary);
+  font-size: 0.95rem;
+  font-family: 'Open Sans', sans-serif;
   color: var(--color-white);
   background: rgba(255,255,255,0.06);
   outline: none;
