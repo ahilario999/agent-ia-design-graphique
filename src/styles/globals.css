@@ -34,8 +34,8 @@
   --transition-fast: 200ms ease-out;
   --transition-normal: 350ms ease-out;
 
-  --text-xs: 1.125rem;
-  --text-sm: 1.32rem;
+  --text-xs: 0.94rem;
+  --text-sm: 1.1rem;
   --text-base: 1rem;
   --text-lg: 1.15rem;
   --text-xl: 1.4rem;
