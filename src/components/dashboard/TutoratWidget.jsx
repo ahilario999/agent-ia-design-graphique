@@ -5,7 +5,7 @@ export default function TutoratWidget() {
     <div className="widget-card glass stagger-5">
       {/* Ornement starburst — animation rotation lente */}
       <div className="ornament ornament--top-right ornament--spin-slow">
-        <svg width="56" height="56" viewBox="0 0 80 80" fill="none">
+        <svg width="45" height="45" viewBox="0 0 80 80" fill="none">
           <line x1="40" y1="2" x2="40" y2="78" stroke="rgba(255,255,255,0.25)" strokeWidth="1.2"/>
           <line x1="2" y1="40" x2="78" y2="40" stroke="rgba(255,255,255,0.25)" strokeWidth="1.2"/>
           <line x1="11.7" y1="11.7" x2="68.3" y2="68.3" stroke="rgba(255,255,255,0.25)" strokeWidth="1.2"/>

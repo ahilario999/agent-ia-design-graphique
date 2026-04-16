@@ -45,16 +45,22 @@ export default function HoraireWidget() {
     <div className="horaire glass stagger-5">
       <div className="horaire__header">
         <div className="horaire__ornement">
-          <img
-            src="/assets/horaire_ornements.svg"
-            alt=""
-            className="horaire__ornement-img"
-            aria-hidden="true"
-          />
+          {/* Ornement grille horaire — 5 lignes (jours de la semaine) */}
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+            <line x1="2" y1="4" x2="34" y2="4" stroke="rgba(255,255,255,0.2)" strokeWidth="1"/>
+            <line x1="2" y1="10" x2="34" y2="10" stroke="rgba(255,255,255,0.2)" strokeWidth="1"/>
+            <line x1="2" y1="16" x2="34" y2="16" stroke="rgba(255,255,255,0.2)" strokeWidth="1"/>
+            <line x1="2" y1="22" x2="34" y2="22" stroke="rgba(255,255,255,0.2)" strokeWidth="1"/>
+            <line x1="2" y1="28" x2="34" y2="28" stroke="rgba(255,255,255,0.25)" strokeWidth="1"/>
+            <circle cx="6" cy="4" r="1.5" fill="rgba(255,255,255,0.25)"/>
+            <circle cx="6" cy="10" r="1.5" fill="rgba(255,255,255,0.25)"/>
+            <circle cx="6" cy="16" r="1.5" fill="rgba(255,255,255,0.25)"/>
+            <circle cx="6" cy="22" r="1.5" fill="rgba(255,255,255,0.25)"/>
+            <circle cx="6" cy="28" r="1.5" fill="rgba(255,255,255,0.25)"/>
+          </svg>
         </div>
         <div className="horaire__header-text">
           <div className="horaire__title">Horaire</div>
-          <div className="horaire__update">Automne A25</div>
         </div>
       </div>
 
