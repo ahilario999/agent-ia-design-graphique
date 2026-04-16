@@ -2,26 +2,28 @@ import React from 'react'
 
 export default function HeaderBranding() {
   return (
-    <div className="header-branding glass stagger-1">
-      <div>
-        <div className="header-branding__logo-text">
-          Design<br />Graphi<br />que <span style={{ fontSize: '0.6em', opacity: 0.7 }}>La Cité</span>
-        </div>
-        <div className="header-branding__subtitle">
-          Design Graphique // Mode Coop
-        </div>
+    <div className="header-branding stagger-1">
+      {/* Carré vert avec le logo officiel Design Graphique La Cité */}
+      <div className="brand-logo">
+        <img
+          src="/assets/logo-design-graphique.png"
+          alt="Design Graphique La Cité"
+          className="brand-logo__img"
+        />
       </div>
-      <div className="header-branding__session">
-        <div className="header-branding__session-tag">automne</div>
-        <div style={{ display: 'flex', alignItems: 'flex-start', gap: '2px' }}>
-          <span className="header-branding__number">26</span>
-          <span className="header-branding__number-dot" />
+
+      {/* Carte glass séparée avec l'info de session */}
+      <div className="brand-session glass">
+        <div className="brand-session__tag">automne</div>
+        <div className="brand-session__number-row">
+          <span className="brand-session__number">26</span>
+          <span className="brand-session__dot" />
         </div>
-        <div className="header-branding__links">
+        <div className="brand-session__links">
           cours<br />info<br />chat
         </div>
+        <div className="brand-session__star">✱</div>
       </div>
-      <div className="header-branding__star">✱</div>
     </div>
   )
 }
