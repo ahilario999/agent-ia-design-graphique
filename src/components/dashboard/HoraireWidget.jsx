@@ -27,18 +27,18 @@ export default function HoraireWidget() {
   return (
     <div className="horaire glass stagger-5">
       <div className="horaire__header">
-        <div className="horaire__header-text">
-          <div className="horaire__title">Horaire : Automne</div>
-          <div className="horaire__update">[ Mise à jour ] A26</div>
+        <div className="horaire__ornement">
+          <img
+            src="/assets/horaire_ornements.svg"
+            alt=""
+            className="horaire__ornement-img"
+            aria-hidden="true"
+          />
         </div>
-      </div>
-      <div className="horaire__ornement">
-        <img
-          src="/assets/horaire_ornements.svg"
-          alt=""
-          className="horaire__ornement-img"
-          aria-hidden="true"
-        />
+        <div className="horaire__header-text">
+          <div className="horaire__title">Horaire</div>
+          <div className="horaire__update">Automne A26</div>
+        </div>
       </div>
 
       <div className="horaire__tabs">

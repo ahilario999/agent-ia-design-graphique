@@ -315,7 +315,7 @@ a:hover { opacity: 0.8; }
 
 .bro-capsule__rule {
   flex: 1;
-  height: 1px;
+  height: 2px;
   background: rgba(255,255,255,0.25);
 }
 
@@ -488,20 +488,16 @@ a:hover { opacity: 0.8; }
 .horaire__header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 12px;
   margin-bottom: 10px;
-}
-
-.horaire__separator {
-  font-size: var(--text-xs);
-  letter-spacing: 0.15em;
-  opacity: 0.3;
 }
 
 .horaire__ornement {
-  width: 100%;
-  margin-bottom: 10px;
+  flex: 0 1 auto;
+  max-width: 45%;
   opacity: 0.55;
+  display: flex;
+  align-items: center;
 }
 
 .horaire__ornement-img {
@@ -510,16 +506,23 @@ a:hover { opacity: 0.8; }
   display: block;
 }
 
+.horaire__header-text {
+  flex: 1;
+  text-align: right;
+}
+
 .horaire__title {
-  font-size: var(--text-base);
-  font-weight: 700;
+  font-size: var(--text-3xl);
+  font-weight: 200;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
+  line-height: 1.1;
 }
 
 .horaire__update {
   font-size: var(--text-xs);
   opacity: 0.45;
+  margin-top: 2px;
 }
 
 .horaire__tabs {
@@ -595,88 +598,57 @@ a:hover { opacity: 0.8; }
 }
 
 /* ============================================
-   SMALL WIDGETS (Impression, Prêt, Tutorat, Stage)
+   WIDGET CARD — système unifié pour les petits widgets
+   (Tutorat, Stage/Flex, Impression, Prêt Multimédia)
    ============================================ */
-.widget-small {
-  padding: 12px;
+.widget-card {
+  padding: 16px 18px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 6px;
-  aspect-ratio: 1;
-  justify-content: center;
+  gap: 4px;
+  position: relative;
+  overflow: hidden;
 }
 
-.widget-small__icons {
-  display: flex;
-  gap: 5px;
-  align-items: center;
-}
-
-.widget-small__icon-circle {
-  width: 30px; height: 30px;
-  border: 1.5px solid rgba(255,255,255,0.4);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.widget-small__title {
-  font-size: var(--text-lg);
-  font-weight: 700;
+.widget-card__title {
+  font-size: var(--text-3xl);
+  font-weight: 200;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
+  line-height: 1.1;
 }
 
-.widget-small__subtitle {
+.widget-card__title--green {
+  color: var(--color-accent-green);
+}
+
+.widget-card__body {
+  font-size: var(--text-xs);
+  line-height: 1.5;
+  opacity: 0.85;
+}
+
+.widget-card__body--italic {
+  font-style: italic;
+  opacity: 0.75;
+}
+
+.widget-card__subtitle {
   font-size: var(--text-xs);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.03em;
   opacity: 0.55;
+  margin-bottom: 2px;
 }
 
-.widget-small__detail {
-  font-size: var(--text-xs);
-  opacity: 0.5;
-  line-height: 1.3;
-}
-
-/* ============================================
-   TUTORAT
-   ============================================ */
-.tutorat {
-  padding: 14px 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  aspect-ratio: 1;
-  justify-content: center;
-  position: relative;
-}
-
-.tutorat__title {
-  font-size: var(--text-3xl);
-  font-weight: 200;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--color-accent-green);
-}
-
-.tutorat__cta {
+.widget-card__cta {
   font-size: var(--text-xs);
   font-weight: 700;
   text-transform: uppercase;
   line-height: 1.5;
   opacity: 0.85;
-}
-
-.tutorat__sub {
-  font-size: var(--text-xs);
-  opacity: 0.5;
-  margin-top: 2px;
+  color: var(--color-white);
 }
 
 /* Ligne ornementale style B.R.O pour widgets */
@@ -698,7 +670,7 @@ a:hover { opacity: 0.8; }
 
 .widget-ornament-line__rule {
   flex: 1;
-  height: 1px;
+  height: 2px;
   background: rgba(255,255,255,0.2);
 }
 
@@ -708,32 +680,7 @@ a:hover { opacity: 0.8; }
   flex-shrink: 0;
 }
 
-/* ============================================
-   FLEX WIDGET (Stage / Bourse)
-   ============================================ */
-.flex-widget {
-  padding: 14px 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  aspect-ratio: 1;
-  justify-content: center;
-  position: relative;
-}
-
-.flex-widget__type {
-  font-size: var(--text-3xl);
-  font-weight: 200;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-}
-
-.flex-widget__content {
-  font-size: var(--text-xs);
-  font-style: italic;
-  line-height: 1.5;
-  opacity: 0.75;
-}
+/* (ancien .flex-widget supprimé — remplacé par .widget-card) */
 
 /* ============================================
    MÉDIAS SOCIAUX
@@ -1073,6 +1020,12 @@ a:hover { opacity: 0.8; }
   right: 12px;
 }
 
+/* Taille max des ornements SVG pour éviter le chevauchement */
+.ornament svg {
+  max-width: 100%;
+  height: auto;
+}
+
 /* Séparateur en croix ++++++++ */
 .ornament-separator {
   font-size: var(--text-xs);
@@ -1128,6 +1081,29 @@ a:hover { opacity: 0.8; }
 @keyframes floatSlow {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-5px); }
+}
+
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulseSlow {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.06); opacity: 0.8; }
+}
+
+/* Classes d'animation pour ornements */
+.ornament--spin-slow {
+  animation: spinSlow 30s linear infinite;
+}
+
+.ornament--pulse-slow {
+  animation: pulseSlow 6s ease-in-out infinite;
+}
+
+.ornament--float-slow {
+  animation: floatSlow 8s ease-in-out infinite;
 }
 
 /* Stagger entrance */
@@ -1216,9 +1192,21 @@ a:hover { opacity: 0.8; }
 
   .widgets-row { flex-direction: column; }
 
-  .widget-small,
-  .tutorat,
-  .flex-widget {
+  .widget-card {
     aspect-ratio: auto;
+  }
+
+  /* Ornements plus petits sur mobile */
+  .ornament svg {
+    width: 48px;
+    height: 48px;
+  }
+
+  .horaire__ornement {
+    max-width: 30%;
+  }
+
+  .horaire__title {
+    font-size: var(--text-2xl);
   }
 }

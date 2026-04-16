@@ -2,34 +2,32 @@ import React from 'react'
 
 export default function PretMultimediaWidget() {
   return (
-    <div className="widget-small glass stagger-6">
-      <div className="widget-small__title">Prêt Multimédia</div>
-      <div className="widget-small__icons">
-        {/* Flèche droite */}
-        <div className="widget-small__icon-circle">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="white" strokeWidth="1.5">
-            <line x1="4" y1="8" x2="12" y2="8" />
-            <polyline points="9,5 12,8 9,11" />
-          </svg>
-        </div>
-        {/* Grille pixels */}
-        <div className="widget-small__icon-circle">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="white" strokeWidth="1">
-            <rect x="4" y="4" width="3" height="3" />
-            <rect x="9" y="4" width="3" height="3" />
-            <rect x="4" y="9" width="3" height="3" />
-            <rect x="9" y="9" width="3" height="3" />
-          </svg>
-        </div>
-        {/* Flèche haut */}
-        <div className="widget-small__icon-circle">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="white" strokeWidth="1.5">
-            <line x1="8" y1="12" x2="8" y2="4" />
-            <polyline points="5,7 8,4 11,7" />
-          </svg>
-        </div>
+    <div className="widget-card glass stagger-6">
+      {/* Ornement grille + flèches — animation pulse lente */}
+      <div className="ornament ornament--top-right ornament--pulse-slow">
+        <svg width="72" height="72" viewBox="0 0 72 72" fill="none">
+          {/* Flèche droite */}
+          <line x1="10" y1="36" x2="62" y2="36" stroke="rgba(255,255,255,0.2)" strokeWidth="1.2"/>
+          <polyline points="56,30 62,36 56,42" stroke="rgba(255,255,255,0.25)" strokeWidth="1.2" fill="none"/>
+          {/* Flèche haut */}
+          <line x1="36" y1="62" x2="36" y2="10" stroke="rgba(255,255,255,0.2)" strokeWidth="1.2"/>
+          <polyline points="30,16 36,10 42,16" stroke="rgba(255,255,255,0.25)" strokeWidth="1.2" fill="none"/>
+          {/* Points aux intersections */}
+          <circle cx="36" cy="36" r="3" fill="rgba(255,255,255,0.2)"/>
+          <circle cx="10" cy="36" r="2.5" fill="rgba(255,255,255,0.25)"/>
+          <circle cx="36" cy="62" r="2.5" fill="rgba(255,255,255,0.25)"/>
+        </svg>
       </div>
-      <div className="widget-small__detail">
+
+      <div className="widget-card__title">Prêt Multimédia</div>
+
+      <div className="widget-ornament-line">
+        <span className="widget-ornament-line__dot" />
+        <span className="widget-ornament-line__rule" />
+        <span className="widget-ornament-line__arrow">▶</span>
+      </div>
+
+      <div className="widget-card__body">
         Local D2070<br />Gratuit avec votre carte étudiante
       </div>
     </div>
