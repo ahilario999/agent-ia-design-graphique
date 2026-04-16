@@ -13,8 +13,24 @@ import MediasSociaux from '../components/dashboard/MediasSociaux'
 import ContactWidget from '../components/dashboard/ContactWidget'
 import ChatInterface from '../components/ChatInterface'
 
+// Fonction pour déterminer le code de saison (A/H) et l'année
+function getSessionCode() {
+  const now = new Date()
+  const month = now.getMonth() // 0-11
+  const year = now.getFullYear()
+
+  // Automne (A): août à décembre (mois 7-11)
+  // Hiver (H): janvier à juillet (mois 0-6)
+  if (month >= 7) {
+    return `A${year % 100}` // A25, A26, etc.
+  } else {
+    return `H${year % 100}` // H25, H26, etc.
+  }
+}
+
 export default function App() {
   const [isLoading, setIsLoading] = useState(true)
+  const sessionCode = getSessionCode()
 
   useEffect(() => {
     const timer = setTimeout(() => setIsLoading(false), 2200)
@@ -55,7 +71,7 @@ export default function App() {
           {/* Rangée centre : 26 | cours/info/chat */}
           <div className="session-main">
             <div className="session-main__left">
-              <span className="session-main__number">25</span>
+              <span className="session-main__number">{sessionCode}</span>
               <span className="session-main__dot" />
             </div>
             <div className="session-main__sep" />

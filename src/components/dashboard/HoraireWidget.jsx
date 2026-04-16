@@ -43,22 +43,43 @@ export default function HoraireWidget() {
 
   return (
     <div className="horaire glass stagger-5">
+      {/* Ornement en bande complète en haut */}
+      <div className="horaire__top-ornament">
+        <svg width="100%" height="40" viewBox="0 0 300 40" preserveAspectRatio="none" fill="none">
+          {/* 5 lignes horizontales (jours semaine) */}
+          <line x1="0" y1="4" x2="300" y2="4" stroke="rgba(255,255,255,0.15)" strokeWidth="1.2"/>
+          <line x1="0" y1="10" x2="300" y2="10" stroke="rgba(255,255,255,0.15)" strokeWidth="1.2"/>
+          <line x1="0" y1="16" x2="300" y2="16" stroke="rgba(255,255,255,0.2)" strokeWidth="1.2"/>
+          <line x1="0" y1="22" x2="300" y2="22" stroke="rgba(255,255,255,0.15)" strokeWidth="1.2"/>
+          <line x1="0" y1="28" x2="300" y2="28" stroke="rgba(255,255,255,0.15)" strokeWidth="1.2"/>
+          <line x1="0" y1="34" x2="300" y2="34" stroke="rgba(255,255,255,0.2)" strokeWidth="1.2"/>
+
+          {/* Points décorateurs sur chaque ligne */}
+          <circle cx="8" cy="4" r="1.5" fill="rgba(255,255,255,0.25)"/>
+          <circle cx="8" cy="10" r="1.5" fill="rgba(255,255,255,0.25)"/>
+          <circle cx="8" cy="16" r="2" fill="rgba(255,255,255,0.35)"/>
+          <circle cx="8" cy="22" r="1.5" fill="rgba(255,255,255,0.25)"/>
+          <circle cx="8" cy="28" r="1.5" fill="rgba(255,255,255,0.25)"/>
+          <circle cx="8" cy="34" r="1.5" fill="rgba(255,255,255,0.3)"/>
+
+          {/* Points au centre et à droite */}
+          <circle cx="150" cy="4" r="1" fill="rgba(255,255,255,0.15)"/>
+          <circle cx="150" cy="10" r="1" fill="rgba(255,255,255,0.15)"/>
+          <circle cx="150" cy="16" r="1.5" fill="rgba(255,255,255,0.25)"/>
+          <circle cx="150" cy="22" r="1" fill="rgba(255,255,255,0.15)"/>
+          <circle cx="150" cy="28" r="1" fill="rgba(255,255,255,0.15)"/>
+          <circle cx="150" cy="34" r="1" fill="rgba(255,255,255,0.2)"/>
+
+          <circle cx="292" cy="4" r="1.5" fill="rgba(255,255,255,0.25)"/>
+          <circle cx="292" cy="10" r="1.5" fill="rgba(255,255,255,0.25)"/>
+          <circle cx="292" cy="16" r="2" fill="rgba(255,255,255,0.35)"/>
+          <circle cx="292" cy="22" r="1.5" fill="rgba(255,255,255,0.25)"/>
+          <circle cx="292" cy="28" r="1.5" fill="rgba(255,255,255,0.25)"/>
+          <circle cx="292" cy="34" r="1.5" fill="rgba(255,255,255,0.3)"/>
+        </svg>
+      </div>
+
       <div className="horaire__header">
-        <div className="horaire__ornement">
-          {/* Ornement grille horaire — 5 lignes (jours de la semaine) */}
-          <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
-            <line x1="2" y1="4" x2="34" y2="4" stroke="rgba(255,255,255,0.2)" strokeWidth="1"/>
-            <line x1="2" y1="10" x2="34" y2="10" stroke="rgba(255,255,255,0.2)" strokeWidth="1"/>
-            <line x1="2" y1="16" x2="34" y2="16" stroke="rgba(255,255,255,0.2)" strokeWidth="1"/>
-            <line x1="2" y1="22" x2="34" y2="22" stroke="rgba(255,255,255,0.2)" strokeWidth="1"/>
-            <line x1="2" y1="28" x2="34" y2="28" stroke="rgba(255,255,255,0.25)" strokeWidth="1"/>
-            <circle cx="6" cy="4" r="1.5" fill="rgba(255,255,255,0.25)"/>
-            <circle cx="6" cy="10" r="1.5" fill="rgba(255,255,255,0.25)"/>
-            <circle cx="6" cy="16" r="1.5" fill="rgba(255,255,255,0.25)"/>
-            <circle cx="6" cy="22" r="1.5" fill="rgba(255,255,255,0.25)"/>
-            <circle cx="6" cy="28" r="1.5" fill="rgba(255,255,255,0.25)"/>
-          </svg>
-        </div>
         <div className="horaire__header-text">
           <div className="horaire__title">Horaire</div>
         </div>
