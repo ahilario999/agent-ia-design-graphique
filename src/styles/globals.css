@@ -464,7 +464,7 @@ a:hover { opacity: 0.8; }
 
 /* Nom de l'événement — 3× plus gros, l'info importante */
 .date-item__label {
-  font-size: var(--text-lg);
+  font-size: 1.44rem;
   font-weight: 300;
   line-height: 1.2;
   letter-spacing: 0.01em;
@@ -683,7 +683,7 @@ a:hover { opacity: 0.8; }
 }
 
 .horaire__course-name {
-  font-size: var(--text-base);
+  font-size: 1.4rem;
   font-weight: 600;
 }
 
@@ -786,6 +786,119 @@ a:hover { opacity: 0.8; }
 }
 
 /* (ancien .flex-widget supprimé — remplacé par .widget-card) */
+
+/* ============================================
+   FAQ WIDGET
+   ============================================ */
+.faq {
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* En-tête ornemental — coins + chevrons */
+.faq__header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.faq__header-ornament {
+  flex-shrink: 0;
+}
+
+.faq__header-ornament--right {
+  margin-left: auto;
+}
+
+.faq__corner-svg {
+  display: block;
+}
+
+.faq__title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.faq__title {
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.faq__title-sub {
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.4;
+}
+
+.faq__chevron {
+  flex-shrink: 0;
+}
+
+/* Items */
+.faq__items {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.faq__item {
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+.faq__item:last-child {
+  border-bottom: none;
+}
+
+.faq__question {
+  width: 100%;
+  background: none;
+  border: none;
+  color: var(--color-white);
+  font-family: var(--font-primary);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  text-align: left;
+  padding: 7px 0;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  letter-spacing: 0.02em;
+  opacity: 0.85;
+  transition: opacity var(--transition-fast);
+}
+
+.faq__question:hover {
+  opacity: 1;
+}
+
+.faq__item--open .faq__question {
+  opacity: 1;
+  color: var(--color-white);
+}
+
+.faq__question-marker {
+  font-size: var(--text-xs);
+  margin-top: 2px;
+  flex-shrink: 0;
+  color: var(--color-accent-coral);
+}
+
+.faq__answer {
+  font-size: var(--text-xs);
+  line-height: 1.6;
+  opacity: 0.65;
+  padding: 0 0 10px 18px;
+  animation: fadeInUp 0.2s ease-out both;
+}
 
 /* ============================================
    MÉDIAS SOCIAUX

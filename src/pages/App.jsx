@@ -8,6 +8,7 @@ import ImpressionWidget from '../components/dashboard/ImpressionWidget'
 import PretMultimediaWidget from '../components/dashboard/PretMultimediaWidget'
 import TutoratWidget from '../components/dashboard/TutoratWidget'
 import FlexWidget from '../components/dashboard/FlexWidget'
+import FAQWidget from '../components/dashboard/FAQWidget'
 import MediasSociaux from '../components/dashboard/MediasSociaux'
 import ContactWidget from '../components/dashboard/ContactWidget'
 import ChatInterface from '../components/ChatInterface'
@@ -104,6 +105,7 @@ export default function App() {
             <TutoratWidget />
             <FlexWidget />
           </div>
+          <FAQWidget />
           <MediasSociaux />
           <ContactWidget />
         </div>
