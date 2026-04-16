@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 const FAQ_DATA = [
   {
     q: "Comment accéder à mon horaire?",
-    a: "Paye tes frais ou fais une entente de paiement. L'accès au portail s'active en août. Portail : portail.collegelacite.ca",
+    a: "Paye tes frais ou fais une entente de paiement. L'accès au portail s'active en août. Portail : https://portail.collegelacite.ca/",
   },
   {
     q: "MacBook — lequel acheter?",
@@ -22,6 +22,29 @@ const FAQ_DATA = [
     a: "Obligatoire. Voir les tarifs étudiants à jour sur https://www.adobe.com/ca/creativecloud/buy/students.html. Figma et Affinity gratuits avec ta carte étudiante.",
   },
 ]
+
+// Fonction pour rendre le texte avec URLs cliquables
+function renderAnswerWithLinks(text) {
+  const urlRegex = /(https?:\/\/[^\s]+)/g
+  const parts = text.split(urlRegex)
+
+  return parts.map((part, i) => {
+    if (urlRegex.test(part)) {
+      return (
+        <a
+          key={i}
+          href={part}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ textDecoration: 'underline', color: 'var(--color-accent-coral)' }}
+        >
+          {part}
+        </a>
+      )
+    }
+    return part
+  })
+}
 
 export default function FAQWidget() {
   const [openIndex, setOpenIndex] = useState(null)
@@ -82,7 +105,7 @@ export default function FAQWidget() {
               <span>{item.q}</span>
             </button>
             {openIndex === i && (
-              <div className="faq__answer">{item.a}</div>
+              <div className="faq__answer">{renderAnswerWithLinks(item.a)}</div>
             )}
           </div>
         ))}
