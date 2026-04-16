@@ -987,12 +987,48 @@ a:hover { opacity: 0.8; }
   flex: 0 0 auto;
 }
 
-.contact__prefix {
+/* Titre en capsule avec ornement — style B.R.O */
+.contact__title-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.contact__title-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 50px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.contact__title-plus {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  opacity: 0.6;
+}
+
+.contact__title-text {
   font-size: var(--text-sm);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  opacity: 0.55;
+  opacity: 0.85;
+}
+
+.contact__title-ornament {
+  flex: 1;
+  font-size: var(--text-sm);
+  letter-spacing: 0.05em;
+  opacity: 0.25;
+  word-break: break-all;
+  line-height: 1;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .contact__info {

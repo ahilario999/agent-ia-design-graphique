@@ -3,7 +3,13 @@ import React from 'react'
 export default function ContactWidget() {
   return (
     <div className="contact glass stagger-8">
-      <div className="contact__prefix">+ Pour nous rejoindre</div>
+      <div className="contact__title-bar">
+        <div className="contact__title-pill">
+          <span className="contact__title-plus">+</span>
+          <span className="contact__title-text">Pour nous rejoindre</span>
+        </div>
+        <div className="contact__title-ornament">||||||||||||||||||||||||||||||||</div>
+      </div>
       <div className="contact__info">
         ahilar@lacitec.on.ca | 613-742-2493 x2601
       </div>
