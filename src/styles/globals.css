@@ -590,20 +590,17 @@ a:hover { opacity: 0.8; }
   overflow: hidden;
 }
 
-/* Ornement bande complète en haut — grille horaire */
-.horaire__top-ornament {
-  width: 100%;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  margin-bottom: 8px;
-}
-
 .horaire__header {
   display: flex;
   align-items: center;
   gap: 12px;
   margin-bottom: 10px;
+  width: 100%;
+}
+
+.horaire__line-ornament {
+  flex: 1;
+  margin-left: 8px;
 }
 
 .horaire__ornement {

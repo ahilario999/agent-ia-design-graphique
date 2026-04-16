@@ -3,15 +3,15 @@ import React from 'react'
 // TODO: Connecter à Supabase pour données dynamiques
 const DATES_DATA = [
   {
-    date: '29 août 2025',
+    date: '28 août 2026',
     label: "Journée d'accueil à La Cité",
   },
   {
-    date: '2 septembre 2025',
+    date: '1er septembre 2026',
     label: "Début de la session d'automne",
   },
   {
-    date: '19 septembre 2025',
+    date: '18 septembre 2026',
     label: "Date limite — retrait de cours",
   },
 ]

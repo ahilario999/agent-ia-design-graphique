@@ -13,8 +13,14 @@ import MediasSociaux from '../components/dashboard/MediasSociaux'
 import ContactWidget from '../components/dashboard/ContactWidget'
 import ChatInterface from '../components/ChatInterface'
 
+// ===== DÉMO MODE — Simuler A26 (Août 2026) pour présentation =====
+const DEMO_MODE = true // Changer à false pour mode production
+const DEMO_SESSION_CODE = 'A26'
+
 // Fonction pour déterminer le code de saison (A/H) et l'année
 function getSessionCode() {
+  if (DEMO_MODE) return DEMO_SESSION_CODE
+
   const now = new Date()
   const month = now.getMonth() // 0-11
   const year = now.getFullYear()
