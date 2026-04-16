@@ -39,21 +39,35 @@ export default function App() {
           </div>
         </div>
 
-        {/* Col 2 : Session info */}
+        {/* Col 2 : Session info — layout grille interne */}
         <div className="grid-session glass stagger-1">
-          <div className="brand-session__label">Session</div>
-          <div className="brand-session__title">Automne</div>
-          <div className="brand-session__number-row">
-            <span className="brand-session__number">26</span>
-            <span className="brand-session__dot" />
+          {/* Rangée haut : automne | étoile */}
+          <div className="session-top">
+            <div className="session-top__pill">automne</div>
+            <div className="session-top__sep" />
+            <div className="session-top__star">✱</div>
           </div>
-          <div className="brand-session__ornament">
-            <span className="brand-session__ornament-dot" />
-            <span className="brand-session__ornament-rule" />
-            <span className="brand-session__ornament-dot" />
+
+          {/* Ligne horizontale */}
+          <div className="session-rule session-rule--h" />
+
+          {/* Rangée centre : 26 | cours/info/chat */}
+          <div className="session-main">
+            <div className="session-main__left">
+              <span className="session-main__number">26</span>
+              <span className="session-main__dot" />
+            </div>
+            <div className="session-main__sep" />
+            <div className="session-main__right">
+              <span>cours</span>
+              <span>info</span>
+              <span>chat</span>
+            </div>
           </div>
-          <div className="brand-session__links">
-            cours · info · chat
+
+          {/* Bas : programme + mode */}
+          <div className="session-footer">
+            Design Graphique &nbsp;// &nbsp;Mode Coop
           </div>
         </div>
 
