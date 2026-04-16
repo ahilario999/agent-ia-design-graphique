@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import LoadingScreen from '../components/dashboard/LoadingScreen'
 import DynamicBackground from '../components/dashboard/DynamicBackground'
-import HeaderBranding from '../components/dashboard/HeaderBranding'
 import HeaderBRO from '../components/dashboard/HeaderBRO'
 import DatesImportantes from '../components/dashboard/DatesImportantes'
 import HoraireWidget from '../components/dashboard/HoraireWidget'
@@ -27,8 +26,9 @@ export default function App() {
       <DynamicBackground />
 
       <div className="dashboard">
-        {/* ===== ROW 1 : Header (6 colonnes) ===== */}
-        {/* Col 1 : Logo vert */}
+        {/* ===== ROW 1 : Header ===== */}
+
+        {/* Col 1 : Logo vert officiel */}
         <div className="grid-logo stagger-1">
           <div className="brand-logo">
             <img
@@ -52,8 +52,7 @@ export default function App() {
           <div className="brand-session__star">✱</div>
         </div>
 
-        {/* Col 3-4 : B.R.O */}
-        <HeaderBRO />
+        {/* Cols 3-4 : Le chatbot occupe cette zone (row 1+2) */}
 
         {/* Col 5-6 : Dates Importantes */}
         <DatesImportantes />
@@ -69,12 +68,13 @@ export default function App() {
           </div>
         </div>
 
-        {/* Cols 3-4 : Chatbot central */}
+        {/* Cols 3-4 : Chatbot central — B.R.O capsule est DEDANS */}
         <div className="grid-center glass glass--no-hover stagger-4">
           <div className="chat-bg">
             <div className="chat-bg__gradient" />
           </div>
           <div className="chat-content">
+            <HeaderBRO />
             <ChatInterface />
           </div>
         </div>
