@@ -27,13 +27,41 @@ export default function App() {
       <DynamicBackground />
 
       <div className="dashboard">
-        {/* Header Row */}
-        <HeaderBranding />
+        {/* ===== ROW 1 : Header (6 colonnes) ===== */}
+        {/* Col 1 : Logo vert */}
+        <div className="grid-logo stagger-1">
+          <div className="brand-logo">
+            <img
+              src="/assets/logo-design-graphique.png"
+              alt="Design Graphique La Cité"
+              className="brand-logo__img"
+            />
+          </div>
+        </div>
+
+        {/* Col 2 : Session info */}
+        <div className="grid-session glass stagger-1">
+          <div className="brand-session__tag">automne</div>
+          <div className="brand-session__number-row">
+            <span className="brand-session__number">26</span>
+            <span className="brand-session__dot" />
+          </div>
+          <div className="brand-session__links">
+            cours<br />info<br />chat
+          </div>
+          <div className="brand-session__star">✱</div>
+        </div>
+
+        {/* Col 3-4 : B.R.O */}
         <HeaderBRO />
+
+        {/* Col 5-6 : Dates Importantes */}
         <DatesImportantes />
 
-        {/* Left Column */}
-        <div className="col-left">
+        {/* ===== ROW 2 : Contenu principal ===== */}
+
+        {/* Cols 1-2 : Colonne gauche */}
+        <div className="grid-left">
           <HoraireWidget />
           <div className="widgets-row">
             <ImpressionWidget />
@@ -41,8 +69,8 @@ export default function App() {
           </div>
         </div>
 
-        {/* Center Column — Chatbot */}
-        <div className="col-center glass glass--no-hover stagger-4">
+        {/* Cols 3-4 : Chatbot central */}
+        <div className="grid-center glass glass--no-hover stagger-4">
           <div className="chat-bg">
             <div className="chat-bg__gradient" />
           </div>
@@ -51,9 +79,9 @@ export default function App() {
           </div>
         </div>
 
-        {/* Right Column */}
-        <div className="col-right">
-          <div className="right-top-row">
+        {/* Cols 5-6 : Colonne droite */}
+        <div className="grid-right">
+          <div className="widgets-row">
             <TutoratWidget />
             <FlexWidget />
           </div>
