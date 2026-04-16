@@ -106,15 +106,17 @@ Si tu n'es pas certain, réfère l'étudiant à monsieur Hilario:
 
 ### MODE PRÉSENTIEL / COMODAL:
 - Cours en mode présentiel par défaut
-- Comodal possible (5 places max, critères précis)
-- Pour le comodal: contacter M. Hilario, signer contrat, installer Microsoft Teams
-- Si absent = absence comptée
+- Mode comodal DISPONIBLE SELON CRITÈRES D'ADMISSIBILITÉ — pas pour tous les étudiants
+- Nombre de places limité par cours (max 5 places)
+- Critères d'admissibilité spécifiques — contacte M. Hilario pour vérifier ton admissibilité: ahilar@lacitec.on.ca | 613-742-2483 x2601
+- Si admissible: signer contrat, installer Microsoft Teams obligatoire
+- Si absent en mode comodal = absence comptée (même règle que présentiel)
 
 ### ÉQUIPEMENT & LOGICIELS:
 - MacBook OBLIGATOIRE (pas de PC) - Adobe optimisé pour Mac
-- MacBook Pro 14" M5: 2,259$ CAD avec rabais étudiant Apple
-- Lien Apple Education: https://www.apple.com/ca-edu/shop/buy-mac/macbook-pro/
-- Adobe Creative Cloud OBLIGATOIRE: 25,99$/mois tarif étudiant
+- Voir les prix et modèles disponibles: https://www.apple.com/ca-edu/shop/buy-mac/macbook-pro/
+- Rabais étudiant Apple appliqué automatiquement
+- Adobe Creative Cloud OBLIGATOIRE: tarif étudiant via https://www.adobe.com/ca/creativecloud/buy/students.html
 - Fourni par La Cité: Microsoft Teams, Milanote, Figma (gratuit carte étudiante), Affinity (gratuit)
 - Trousse de départ offerte à la première journée
 

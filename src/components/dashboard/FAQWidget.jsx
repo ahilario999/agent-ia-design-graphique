@@ -7,11 +7,11 @@ const FAQ_DATA = [
   },
   {
     q: "MacBook — lequel acheter?",
-    a: "MacBook Pro 14\" M4 recommandé. Dispo avec rabais étudiant Apple à ~2 259$ CAD. PC non compatible avec Adobe optimisé Mac.",
+    a: "MacBook Pro 14\" recommandé. Voir les prix actuels avec rabais étudiant sur https://www.apple.com/ca-edu/shop/buy-mac/macbook-pro/. PC non compatible — Adobe est optimisé pour Mac.",
   },
   {
     q: "C'est quoi le mode comodal?",
-    a: "Tu assistes au cours à distance via Teams. Max 5 places par cours. Contacter M. Hilario pour s'inscrire et signer le contrat.",
+    a: "Mode où tu assistes au cours à distance via Teams. ATTENTION: disponible seulement selon critères d'admissibilité (pas pour tous). Max 5 places par cours. Contacte M. Hilario pour vérifier ton admissibilité.",
   },
   {
     q: "J'ai échoué un cours — c'est quoi mes options?",
@@ -19,7 +19,7 @@ const FAQ_DATA = [
   },
   {
     q: "Adobe Creative Cloud — combien ça coûte?",
-    a: "25,99$/mois au tarif étudiant. Obligatoire. Figma et Affinity sont fournis gratuitement avec ta carte étudiante.",
+    a: "Obligatoire. Voir les tarifs étudiants à jour sur https://www.adobe.com/ca/creativecloud/buy/students.html. Figma et Affinity gratuits avec ta carte étudiante.",
   },
 ]
 
