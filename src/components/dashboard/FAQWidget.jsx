@@ -25,25 +25,39 @@ const FAQ_DATA = [
 
 // Fonction pour rendre le texte avec URLs cliquables
 function renderAnswerWithLinks(text) {
-  const urlRegex = /(https?:\/\/[^\s]+)/g
-  const parts = text.split(urlRegex)
+  // Regex pour capturer URLs, excluant la ponctuation finale
+  const urlRegex = /(https?:\/\/[^\s]+?)(?=[\s.,;:!?]|$)/g
+  const parts = []
+  let lastIndex = 0
+  let match
 
-  return parts.map((part, i) => {
-    if (urlRegex.test(part)) {
-      return (
-        <a
-          key={i}
-          href={part}
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{ textDecoration: 'underline', color: 'var(--color-accent-coral)' }}
-        >
-          {part}
-        </a>
-      )
+  const regex = new RegExp(urlRegex)
+  while ((match = regex.exec(text)) !== null) {
+    // Ajouter le texte avant l'URL
+    if (match.index > lastIndex) {
+      parts.push(text.substring(lastIndex, match.index))
     }
-    return part
-  })
+    // Ajouter le lien
+    parts.push(
+      <a
+        key={`link-${match.index}`}
+        href={match[1]}
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{ textDecoration: 'underline', color: 'var(--color-accent-coral)' }}
+      >
+        {match[1]}
+      </a>
+    )
+    lastIndex = regex.lastIndex
+  }
+
+  // Ajouter le texte restant
+  if (lastIndex < text.length) {
+    parts.push(text.substring(lastIndex))
+  }
+
+  return parts.length > 0 ? parts : text
 }
 
 export default function FAQWidget() {
