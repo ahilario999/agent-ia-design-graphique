@@ -42,7 +42,7 @@
   --text-2xl: 1.75rem;
   --text-3xl: 2.2rem;
   --text-4xl: 3rem;
-  --text-hero: 4rem;
+  --text-hero: clamp(3rem, 5vw, 6rem);
 }
 
 /* --- Reset --- */
