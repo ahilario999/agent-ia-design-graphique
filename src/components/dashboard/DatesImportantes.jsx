@@ -3,17 +3,14 @@ import React from 'react'
 // TODO: Connecter à Supabase pour données dynamiques
 const DATES_MOCK = [
   {
-    icon: '✱',
     date: '30 août 2026',
     label: "Journée d'accueil à La Cité",
   },
   {
-    icon: '○',
     date: '7 septembre 2026',
     label: "Début de la session d'automne",
   },
   {
-    icon: '◇',
     date: '19 septembre 2026',
     label: "Date limite pour se retirer d'un cours",
   },
@@ -43,21 +40,60 @@ function generateICS(date, label) {
   URL.revokeObjectURL(url)
 }
 
+/* Ornements SVG uniques pour chaque date */
+const ornaments = [
+  // Starburst 8 branches — spin
+  <svg width="36" height="36" viewBox="0 0 36 36" fill="none" key="o1">
+    <line x1="18" y1="1" x2="18" y2="35" stroke="rgba(255,255,255,0.3)" strokeWidth="1"/>
+    <line x1="1" y1="18" x2="35" y2="18" stroke="rgba(255,255,255,0.3)" strokeWidth="1"/>
+    <line x1="5.3" y1="5.3" x2="30.7" y2="30.7" stroke="rgba(255,255,255,0.3)" strokeWidth="1"/>
+    <line x1="30.7" y1="5.3" x2="5.3" y2="30.7" stroke="rgba(255,255,255,0.3)" strokeWidth="1"/>
+    <circle cx="18" cy="18" r="2" fill="rgba(255,255,255,0.25)"/>
+  </svg>,
+  // Cercles concentriques — pulse
+  <svg width="36" height="36" viewBox="0 0 36 36" fill="none" key="o2">
+    <circle cx="18" cy="18" r="15" stroke="rgba(255,255,255,0.25)" strokeWidth="1"/>
+    <circle cx="18" cy="18" r="8" stroke="rgba(255,255,255,0.25)" strokeWidth="1"/>
+    <circle cx="18" cy="18" r="2" fill="rgba(255,255,255,0.3)"/>
+  </svg>,
+  // Losange — float
+  <svg width="36" height="36" viewBox="0 0 36 36" fill="none" key="o3">
+    <rect x="18" y="3" width="21.2" height="21.2" rx="0" transform="rotate(45 18 3)" stroke="rgba(255,255,255,0.25)" strokeWidth="1" fill="none"/>
+    <circle cx="18" cy="18" r="2" fill="rgba(255,255,255,0.25)"/>
+  </svg>,
+]
+
+const animClasses = [
+  'date-ornament--spin',
+  'date-ornament--pulse',
+  'date-ornament--float',
+]
+
 export default function DatesImportantes() {
   return (
     <div className="header-dates glass stagger-3">
+      <div className="dates-header">
+        <span className="dates-header__label">Calendrier</span>
+        <span className="dates-header__rule" />
+        <span className="dates-header__dot" />
+      </div>
+
       {DATES_MOCK.map((item, i) => (
         <div className="date-item" key={i}>
-          <div className="date-item__icon">{item.icon}</div>
+          <div className={`date-item__ornament ${animClasses[i]}`}>
+            {ornaments[i]}
+          </div>
           <div className="date-item__content">
-            <div className="date-item__date">{item.date}</div>
             <div className="date-item__label">{item.label}</div>
-            <button
-              className="date-item__rappel"
-              onClick={() => generateICS(item.date, item.label)}
-            >
-              Ajouter un rappel
-            </button>
+            <div className="date-item__meta">
+              <span className="date-item__date">{item.date}</span>
+              <button
+                className="date-item__rappel"
+                onClick={() => generateICS(item.date, item.label)}
+              >
+                + rappel
+              </button>
+            </div>
           </div>
         </div>
       ))}
