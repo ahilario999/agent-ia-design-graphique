@@ -5,7 +5,7 @@ export default function PretMultimediaWidget() {
     <div className="widget-card glass stagger-6">
       {/* Ornement grille + flèches — animation pulse lente */}
       <div className="ornament ornament--top-right ornament--pulse-slow">
-        <svg width="72" height="72" viewBox="0 0 72 72" fill="none">
+        <svg width="50" height="50" viewBox="0 0 72 72" fill="none">
           {/* Flèche droite */}
           <line x1="10" y1="36" x2="62" y2="36" stroke="rgba(255,255,255,0.2)" strokeWidth="1.2"/>
           <polyline points="56,30 62,36 56,42" stroke="rgba(255,255,255,0.25)" strokeWidth="1.2" fill="none"/>

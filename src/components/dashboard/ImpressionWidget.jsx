@@ -5,7 +5,7 @@ export default function ImpressionWidget() {
     <div className="widget-card glass stagger-6">
       {/* Ornement croix + cercle — animation float lente */}
       <div className="ornament ornament--top-right ornament--float-slow">
-        <svg width="72" height="72" viewBox="0 0 72 72" fill="none">
+        <svg width="50" height="50" viewBox="0 0 72 72" fill="none">
           <circle cx="36" cy="36" r="28" stroke="rgba(255,255,255,0.18)" strokeWidth="1.2"/>
           <line x1="36" y1="4" x2="36" y2="68" stroke="rgba(255,255,255,0.2)" strokeWidth="1.2"/>
           <line x1="4" y1="36" x2="68" y2="36" stroke="rgba(255,255,255,0.2)" strokeWidth="1.2"/>

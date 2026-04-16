@@ -41,15 +41,20 @@ export default function App() {
 
         {/* Col 2 : Session info */}
         <div className="grid-session glass stagger-1">
-          <div className="brand-session__tag">automne</div>
+          <div className="brand-session__label">Session</div>
+          <div className="brand-session__title">Automne</div>
           <div className="brand-session__number-row">
             <span className="brand-session__number">26</span>
             <span className="brand-session__dot" />
           </div>
-          <div className="brand-session__links">
-            cours<br />info<br />chat
+          <div className="brand-session__ornament">
+            <span className="brand-session__ornament-dot" />
+            <span className="brand-session__ornament-rule" />
+            <span className="brand-session__ornament-dot" />
           </div>
-          <div className="brand-session__star">✱</div>
+          <div className="brand-session__links">
+            cours · info · chat
+          </div>
         </div>
 
         {/* Cols 3-4 : Le chatbot occupe cette zone (row 1+2) */}
