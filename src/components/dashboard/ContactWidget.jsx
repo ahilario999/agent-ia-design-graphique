@@ -9,11 +9,11 @@ export default function ContactWidget() {
       </div>
       <a
         className="contact__cta"
-        href="mailto:ahilar@lacitec.on.ca?subject=Demande de rendez-vous"
+        href="https://bookings.cloud.microsoft/book/AntonioHilario@live.lacitec.on.ca/?ismsaljsauthenabled=true"
         target="_blank"
         rel="noopener noreferrer"
       >
-        Clique sur ce lien pour prendre rendez-vous
+        Prendre un rendez-vous
       </a>
     </div>
   )

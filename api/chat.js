@@ -48,6 +48,7 @@ IMPORTANT — Format obligatoire pour lisibilité dans l'interface:
 ## ESCALADE (QUAND TU NE SAIS PAS):
 Si tu n'es pas certain, réfère l'étudiant à monsieur Hilario:
 📧 ahilar@lacitec.on.ca | 📞 613-742-2483 poste 2601
+📅 Prendre rendez-vous: https://bookings.cloud.microsoft/book/AntonioHilario@live.lacitec.on.ca/?ismsaljsauthenabled=true
 
 ## CONNAISSANCES SPÉCIFIQUES:
 
@@ -142,6 +143,7 @@ Si tu n'es pas certain, réfère l'étudiant à monsieur Hilario:
 Antonio Hilario, Coordonnateur
 📧 ahilar@lacitec.on.ca
 📞 613-742-2483 poste 2601
+📅 Rendez-vous en ligne: https://bookings.cloud.microsoft/book/AntonioHilario@live.lacitec.on.ca/?ismsaljsauthenabled=true
 `;
 
 export default async function handler(req, res) {
