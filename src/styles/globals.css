@@ -658,10 +658,10 @@ a:hover { opacity: 0.8; }
 }
 
 .tutorat__title {
-  font-size: var(--text-2xl);
-  font-weight: 700;
+  font-size: var(--text-3xl);
+  font-weight: 200;
   text-transform: uppercase;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.06em;
   color: var(--color-accent-green);
 }
 
@@ -679,6 +679,35 @@ a:hover { opacity: 0.8; }
   margin-top: 2px;
 }
 
+/* Ligne ornementale style B.R.O pour widgets */
+.widget-ornament-line {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 6px 0;
+  width: 100%;
+}
+
+.widget-ornament-line__dot {
+  width: 4px;
+  height: 4px;
+  background: rgba(255,255,255,0.35);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.widget-ornament-line__rule {
+  flex: 1;
+  height: 1px;
+  background: rgba(255,255,255,0.2);
+}
+
+.widget-ornament-line__arrow {
+  font-size: 0.5rem;
+  opacity: 0.4;
+  flex-shrink: 0;
+}
+
 /* ============================================
    FLEX WIDGET (Stage / Bourse)
    ============================================ */
@@ -693,10 +722,10 @@ a:hover { opacity: 0.8; }
 }
 
 .flex-widget__type {
-  font-size: var(--text-2xl);
-  font-weight: 700;
+  font-size: var(--text-3xl);
+  font-weight: 200;
   text-transform: uppercase;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.06em;
 }
 
 .flex-widget__content {
