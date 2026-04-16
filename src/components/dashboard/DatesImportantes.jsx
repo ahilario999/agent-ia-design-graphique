@@ -1,18 +1,18 @@
 import React from 'react'
 
 // TODO: Connecter à Supabase pour données dynamiques
-const DATES_MOCK = [
+const DATES_DATA = [
   {
-    date: '30 août 2026',
+    date: '29 août 2025',
     label: "Journée d'accueil à La Cité",
   },
   {
-    date: '7 septembre 2026',
+    date: '2 septembre 2025',
     label: "Début de la session d'automne",
   },
   {
-    date: '19 septembre 2026',
-    label: "Date limite pour se retirer d'un cours",
+    date: '19 septembre 2025',
+    label: "Date limite — retrait de cours",
   },
 ]
 
@@ -78,7 +78,7 @@ export default function DatesImportantes() {
         <span className="dates-header__dot" />
       </div>
 
-      {DATES_MOCK.map((item, i) => (
+      {DATES_DATA.map((item, i) => (
         <div className="date-item" key={i}>
           <div className={`date-item__ornament ${animClasses[i]}`}>
             {ornaments[i]}

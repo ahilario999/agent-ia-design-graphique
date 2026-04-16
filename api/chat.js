@@ -51,12 +51,52 @@ Si tu n'es pas certain, réfère l'étudiant à monsieur Hilario:
 
 ## CONNAISSANCES SPÉCIFIQUES:
 
-### HORAIRE & ACCÈS:
+### HORAIRE & ACCÈS (SESSION AUTOMNE 2025):
 - Pour recevoir son horaire: payer les frais ou faire entente de paiement, puis accès via portail en août
 - Portail étudiant: https://portail.collegelacite.ca/
 - eCité (plateforme cours en ligne): https://ecite.lacitec.on.ca/
 - eCité sert à accéder au matériel, rendre travaux, communiquer avec profs
 - Les locaux principaux sont D2050 et D2060
+
+#### HORAIRE ÉTAPE 1 (Automne 2025):
+- Dessin (024642 ART): Lun 9h-12h, D2050, Corinne Blouin-Hudon
+- Fondements du design graphique (024654 DSN): Mar 9h-12h, D2050, Nadine Bariteau
+- Créativité exploratoire (023759 MDI): Mar 13h-16h, D2050, Nadine Bariteau
+- Technique de prépresse (024643 DSN): Mer 16h-19h, D2050, Élodie Nonnon
+- Bases de la typographie (024659 DSN): Jeu 13h-16h, D2050, Miguel Boisvenue
+- Principe de mise en page (024668 DSN): Jeu 17h-20h, D2050, Sara Drouin
+- Français écrit (FRA): Ven 9h-12h, Comodal
+
+#### HORAIRE ÉTAPE 3 (Automne 2025):
+- Illustration (024666 ART): Lun 13h-16h, D2050, Corinne Blouin-Hudon
+- Production imprimée (024646 ART): Mar 16h-19h, D2060, Mathieu Desjardins
+- Image de marque (024661 MDI): Mer 9h-12h, D2050, Nicolas Beland Latreille
+- Design adaptatif (024658 TEC): Mer 13h-16h, D2050, Nicolas Beland Latreille
+- Typographie exploratoire (024651 ART): Jeu 9h-12h, D2050, Miguel Boisvenue
+- Animation graphique (024645 ART): Jeu 13h-16h, En ligne, Antonio
+- English (ENL): Ven 9h-12h, Comodal
+
+#### HORAIRE ÉTAPE 5 (Automne 2025):
+- Production numérique (024663 TEC): Lun 9h-12h, D2060, Nicolas B-Latreille
+- Signes et symboles (024664 DSN): Lun 13h-16h, D2060, Stephanie Hubell-Lacroix
+- Portfolio S.010 (024669 ART): Mar 9h-12h, En ligne, Antonio
+- Affiches (024656 ART): Mer 9h-12h, D2060, Vanessa Delaveau
+- Portfolio numérique et autopromotion (024674 ART): Mer 13h-16h, En ligne, Antonio
+- Production d'impression numérique (024648 ART): Jeu 9h-12h, D2060, Patrick Ranger
+- Préparation au monde du travail (024655 ADM): Jeu 13h-16h, D2060, Patrick Ranger
+
+#### PROFESSEURS:
+- Corinne Blouin-Hudon: Dessin (É1), Illustration (É3)
+- Nadine Bariteau: Fond. du design graphique (É1), Créativité exploratoire (É1)
+- Miguel Boisvenue: Bases de la typographie (É1), Typographie exploratoire (É3)
+- Élodie Nonnon: Technique de prépresse (É1)
+- Sara Drouin: Principe de mise en page (É1)
+- Nicolas Beland Latreille: Image de marque (É3), Design adaptatif (É3), Production numérique (É5)
+- Mathieu Desjardins: Production imprimée (É3)
+- Antonio: Animation graphique (É3), Portfolio S.010 (É5), Portfolio numérique (É5)
+- Stephanie Hubell-Lacroix: Signes et symboles (É5)
+- Vanessa Delaveau: Affiches (É5)
+- Patrick Ranger: Production d'impression numérique (É5), Préparation au monde du travail (É5)
 
 ### PAIEMENT & INSCRIPTION:
 - 2 options: paiement complet ou entente de paiement
@@ -91,7 +131,7 @@ Si tu n'es pas certain, réfère l'étudiant à monsieur Hilario:
 - Aide financière: https://aide.collegelacite.ca/
 
 ### JOURNÉE D'ACCUEIL:
-- Date: Vendredi 30 août 2025
+- Date: Vendredi 29 août 2025
 - Invitation par email (vérifier spam)
 - Inscription via lien dans l'email
 - Obligatoire: rencontre profs, carte étudiante, infos programme, visite campus

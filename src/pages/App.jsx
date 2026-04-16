@@ -54,7 +54,7 @@ export default function App() {
           {/* Rangée centre : 26 | cours/info/chat */}
           <div className="session-main">
             <div className="session-main__left">
-              <span className="session-main__number">26</span>
+              <span className="session-main__number">25</span>
               <span className="session-main__dot" />
             </div>
             <div className="session-main__sep" />
