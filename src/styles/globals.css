@@ -498,6 +498,18 @@ a:hover { opacity: 0.8; }
   opacity: 0.3;
 }
 
+.horaire__ornement {
+  width: 100%;
+  margin-bottom: 10px;
+  opacity: 0.55;
+}
+
+.horaire__ornement-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 .horaire__title {
   font-size: var(--text-base);
   font-weight: 700;
