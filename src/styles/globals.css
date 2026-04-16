@@ -27,22 +27,22 @@
 
   --gap: 10px;
   --padding-card: 16px;
-  --radius: 20px;
-  --radius-sm: 14px;
-  --radius-xs: 8px;
+  --radius: 0px;
+  --radius-sm: 0px;
+  --radius-xs: 0px;
 
   --transition-fast: 200ms ease-out;
   --transition-normal: 350ms ease-out;
 
-  --text-xs: 0.6rem;
-  --text-sm: 0.72rem;
-  --text-base: 0.82rem;
-  --text-lg: 0.95rem;
-  --text-xl: 1.15rem;
-  --text-2xl: 1.4rem;
-  --text-3xl: 1.8rem;
-  --text-4xl: 2.5rem;
-  --text-hero: 3.5rem;
+  --text-xs: 0.75rem;
+  --text-sm: 0.88rem;
+  --text-base: 1rem;
+  --text-lg: 1.15rem;
+  --text-xl: 1.4rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.2rem;
+  --text-4xl: 3rem;
+  --text-hero: 4rem;
 }
 
 /* --- Reset --- */
@@ -287,7 +287,7 @@ a:hover { opacity: 0.8; }
 }
 
 .bro-capsule__title {
-  font-size: var(--text-xl);
+  font-size: var(--text-2xl);
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -369,7 +369,7 @@ a:hover { opacity: 0.8; }
 .date-item__content { flex: 1; }
 
 .date-item__date {
-  font-size: var(--text-sm);
+  font-size: var(--text-base);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.02em;
@@ -499,8 +499,8 @@ a:hover { opacity: 0.8; }
 }
 
 .horaire__title {
-  font-size: var(--text-sm);
-  font-weight: 600;
+  font-size: var(--text-base);
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -563,7 +563,7 @@ a:hover { opacity: 0.8; }
 }
 
 .horaire__course-name {
-  font-size: var(--text-sm);
+  font-size: var(--text-base);
   font-weight: 600;
 }
 
@@ -612,7 +612,7 @@ a:hover { opacity: 0.8; }
 }
 
 .widget-small__title {
-  font-size: var(--text-sm);
+  font-size: var(--text-lg);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -646,7 +646,7 @@ a:hover { opacity: 0.8; }
 }
 
 .tutorat__title {
-  font-size: var(--text-xl);
+  font-size: var(--text-2xl);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.03em;
@@ -657,7 +657,8 @@ a:hover { opacity: 0.8; }
   font-size: var(--text-xs);
   font-weight: 700;
   text-transform: uppercase;
-  line-height: 1.4;
+  line-height: 1.5;
+  opacity: 0.85;
 }
 
 .tutorat__sub {
@@ -680,7 +681,7 @@ a:hover { opacity: 0.8; }
 }
 
 .flex-widget__type {
-  font-size: var(--text-xl);
+  font-size: var(--text-2xl);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.03em;
@@ -689,8 +690,8 @@ a:hover { opacity: 0.8; }
 .flex-widget__content {
   font-size: var(--text-xs);
   font-style: italic;
-  line-height: 1.4;
-  opacity: 0.8;
+  line-height: 1.5;
+  opacity: 0.75;
 }
 
 /* ============================================
@@ -767,33 +768,38 @@ a:hover { opacity: 0.8; }
 }
 
 /* ============================================
-   CONTACT
+   CONTACT — boîte plus imposante comme le Figma
    ============================================ */
 .contact {
-  padding: 12px 16px;
+  padding: 20px 22px;
+  flex: 0 0 auto;
 }
 
 .contact__prefix {
-  font-size: var(--text-xs);
+  font-size: var(--text-sm);
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  opacity: 0.45;
+  letter-spacing: 0.06em;
+  opacity: 0.55;
 }
 
 .contact__info {
-  font-size: var(--text-xs);
-  opacity: 0.75;
-  margin-top: 3px;
+  font-size: var(--text-sm);
+  opacity: 0.8;
+  margin-top: 8px;
+  line-height: 1.5;
 }
 
 .contact__cta {
-  font-size: var(--text-xs);
-  font-weight: 600;
+  display: block;
+  font-size: var(--text-sm);
+  font-weight: 700;
   text-transform: uppercase;
   text-decoration: underline;
-  text-underline-offset: 2px;
+  text-underline-offset: 3px;
+  letter-spacing: 0.03em;
   cursor: pointer;
-  margin-top: 3px;
+  margin-top: 10px;
 }
 
 /* ============================================
@@ -820,10 +826,10 @@ a:hover { opacity: 0.8; }
 .message--user { align-self: flex-end; }
 
 .message__bubble {
-  padding: 9px 13px;
+  padding: 12px 16px;
   border-radius: 12px;
-  font-size: var(--text-base);
-  line-height: 1.5;
+  font-size: 1.1rem;
+  line-height: 1.55;
   word-wrap: break-word;
 }
 
@@ -883,18 +889,18 @@ a:hover { opacity: 0.8; }
 
 .input-area__field {
   flex: 1;
-  padding: 9px 14px;
+  padding: 12px 18px;
   border: 1px solid rgba(255,255,255,0.15);
   border-radius: 22px;
-  font-size: var(--text-base);
+  font-size: 1.1rem;
   font-family: var(--font-primary);
   color: var(--color-white);
   background: rgba(255,255,255,0.06);
   outline: none;
   transition: border-color var(--transition-fast);
   resize: none;
-  min-height: 38px;
-  max-height: 90px;
+  min-height: 46px;
+  max-height: 100px;
   line-height: 1.4;
 }
 
@@ -908,12 +914,12 @@ a:hover { opacity: 0.8; }
 }
 
 .input-area__button {
-  width: 38px; height: 38px;
+  width: 46px; height: 46px;
   border: none;
   border-radius: 50%;
   background: rgba(255,255,255,0.12);
   color: var(--color-white);
-  font-size: var(--text-lg);
+  font-size: 1.2rem;
   cursor: pointer;
   display: flex;
   align-items: center;
