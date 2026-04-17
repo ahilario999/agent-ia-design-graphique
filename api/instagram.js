@@ -33,12 +33,23 @@ export default async function handler(req, res) {
 
     const item = posts[0]
 
-    // Pour les carrousels, on prend la première image
-    const imageUrl = item.mediaType === 'CAROUSEL_ALBUM'
-      ? item.children?.[0]?.mediaUrl || item.mediaUrl
-      : item.mediaType === 'VIDEO'
-        ? item.thumbnailUrl
-        : item.mediaUrl
+    // Behold expose prunedMediaUrl (CDN stable) ou mediaUrl (Instagram direct)
+    // On préfère prunedMediaUrl car les URLs Instagram expirent
+    const pickUrl = (obj) =>
+      obj?.prunedMediaUrl || obj?.mediaUrl || obj?.thumbnailUrl || null
+
+    let imageUrl
+    if (item.mediaType === 'CAROUSEL_ALBUM') {
+      imageUrl = pickUrl(item.children?.[0]) || pickUrl(item)
+    } else if (item.mediaType === 'VIDEO') {
+      imageUrl = item.prunedThumbnailUrl || item.thumbnailUrl || pickUrl(item)
+    } else {
+      imageUrl = pickUrl(item)
+    }
+
+    // Log pour debug en cas de champs inattendus
+    console.log('[Instagram] Champs reçus:', Object.keys(item).join(', '))
+    console.log('[Instagram] imageUrl résolu:', imageUrl)
 
     return res.status(200).json({
       post: {
@@ -48,6 +59,7 @@ export default async function handler(req, res) {
         mediaType: item.mediaType || '',
       },
       configured: true,
+      _debug: { fields: Object.keys(item) },
     })
 
   } catch (err) {
