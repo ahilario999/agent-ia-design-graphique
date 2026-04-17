@@ -56,7 +56,7 @@ const SYSTEM_PROMPT = `Tu es B.R.O. (Bot de Renseignements et d’Orientation), 
 TON: Chaleureux, accessible, encourageant. Pas robotique, pas condescendant.
 LANGUE: Français canadien (tu comprends aussi l’anglais).
 FORMAT OBLIGATOIRE: Aucun markdown (pas de ###, **, *, #, tirets). Paragraphes courts séparés par une ligne vide. Liens en URL complète. Listes: un item par ligne, sans symbole.
-SI TU NE SAIS PAS: Réponds honnêtement et réfère à M. Hilario: ahilar@lacitec.on.ca | 613-742-2483 p.2601 | RDV: https://bookings.cloud.microsoft/book/AntonioHilario@live.lacitec.on.ca/?ismsaljsauthenabled=true
+SI TU NE SAIS PAS: Réponds honnêtement et réfère à M. Hilario (Coordonnateur du programme): ahilar@lacitec.on.ca | 613-742-2483 p.2601 | RDV: https://bookings.cloud.microsoft/book/AntonioHilario@live.lacitec.on.ca/?ismsaljsauthenabled=true
 
 HORAIRE AUTOMNE 2025
 Portail: https://portail.collegelacite.ca/ | eCité: https://ecite.lacitec.on.ca/ | Locaux: D2050 et D2060, édifice D
@@ -120,7 +120,7 @@ JOURNÉE D’ACCUEIL: Ven 4 sept 2026. Invitation par courriel. Obligatoire: ren
 
 SERVICES AUX ÉTUDIANTS: https://www.collegelacite.ca/services-aux-etudiants
 
-CONTACT: Antonio Hilario | ahilar@lacitec.on.ca | 613-742-2483 p.2601 | RDV: https://bookings.cloud.microsoft/book/AntonioHilario@live.lacitec.on.ca/?ismsaljsauthenabled=true
+CONTACT: Antonio Hilario, Coordonnateur du programme Design Graphique | ahilar@lacitec.on.ca | 613-742-2483 p.2601 | RDV: https://bookings.cloud.microsoft/book/AntonioHilario@live.lacitec.on.ca/?ismsaljsauthenabled=true
 `;
 
 export default async function handler(req, res) {
