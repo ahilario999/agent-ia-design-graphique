@@ -240,8 +240,11 @@ Antonio Hilario, Coordonnateur
 
 export default async function handler(req, res) {
   const origin = req.headers.origin || '';
-  const allowed = ['https://agent-ia-design-graphique.vercel.app', 'http://localhost', 'http://127.0.0.1'];
-  const corsOrigin = allowed.some(a => origin.startsWith(a)) ? origin : allowed[0];
+  const isAllowed =
+    origin.includes('.vercel.app') ||
+    origin.startsWith('http://localhost') ||
+    origin.startsWith('http://127.0.0.1');
+  const corsOrigin = isAllowed ? origin : 'https://vercel.app';
   res.setHeader('Access-Control-Allow-Origin', corsOrigin);
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
