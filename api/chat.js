@@ -177,12 +177,17 @@ Tu peux aussi mentionner le téléphone ou le lien de rendez-vous si c'est perti
 - Trousse de départ offerte à la première journée
 
 ### SUPPORT ACADÉMIQUE:
-- Échec: possibilité de DR (Droit de Reprise) ou reprendre le cours
-- Cours sessions impaires (1,3,5) = automne seulement; pairs (2,4,6) = hiver seulement
-- Échec = cheminement modifié, risque de ne pas diplômer avec sa cohorte
 - Tutoring via Services aux étudiants ou Zone Réussite: https://www.collegelacite.ca/zone-reussite
 - Pour rejoindre un prof: via Teams, eCité, email direct, ou en personne
 - Pour faire une demande de tutorat, il faut passer par le portail étudiant https://portail.collegelacite.ca/web/portail/login?redirect=/group/portail-etudiant/appui-academique
+
+### SI TU ÉCHOUES UN COURS:
+Étape 1 — Vérifier ta note sur le portail étudiant : https://portail.collegelacite.ca/
+Étape 2 — Lire la note obtenue :
+- Note **DR** (Droit de Reprise) = tu as droit à un examen de reprise. Contacte ton professeur ou M. Hilario pour connaître les modalités.
+- Note **EC** (Échec) = pas de reprise possible. Tu devras reprendre le cours complet lors de la prochaine session où il sera offert.
+Important : les cours des étapes impaires (1, 3, 5) sont offerts à l'automne seulement, et les cours des étapes paires (2, 4, 6) à l'hiver seulement. Un échec peut donc modifier ton cheminement et retarder ton diplôme d'un an.
+En cas de doute, contacte M. Hilario : ahilar@lacitec.on.ca
 - Besoin d’accommodement ? Si tu es dans cette situation et que tu as besoin d’accommodements au Collège, voici ce que tu dois faire :
   a) Prendre un rendez-vous à La Boussole ou procéder à l’ouverture de ton dossier ;
   b) Fournir la documentation exigée (https://www.collegelacite.ca/documents/10315/31188668/Documents_exiges_accommodements.pdf/5f3be320-50c8-9477-aed2-9932cfc0af4f);
