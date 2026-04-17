@@ -24,11 +24,27 @@ export default async function handler(req, res) {
   }
 
   try {
-    const response = await fetch(`https://feeds.behold.so/${widgetId}`)
-    const posts    = await response.json()
+    const url      = `https://feeds.behold.so/${widgetId}`
+    const response = await fetch(url)
+    const rawText  = await response.text()
 
-    if (!response.ok || !Array.isArray(posts) || posts.length === 0) {
-      return res.status(200).json({ post: null })
+    // Debug temporaire — à retirer une fois que ça fonctionne
+    if (!response.ok) {
+      return res.status(200).json({
+        post: null,
+        _debug: { status: response.status, url, body: rawText.substring(0, 300) }
+      })
+    }
+
+    let posts
+    try { posts = JSON.parse(rawText) }
+    catch { return res.status(200).json({ post: null, _debug: { parseError: true, raw: rawText.substring(0, 300) } }) }
+
+    if (!Array.isArray(posts) || posts.length === 0) {
+      return res.status(200).json({
+        post: null,
+        _debug: { isArray: Array.isArray(posts), length: posts?.length, sample: JSON.stringify(posts).substring(0, 300) }
+      })
     }
 
     const item = posts[0]
