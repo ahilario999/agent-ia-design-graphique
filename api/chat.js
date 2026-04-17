@@ -211,8 +211,8 @@ Tu peux aussi mentionner le téléphone ou le lien de rendez-vous si c'est perti
 - Inscription via lien dans l'email
 - Obligatoire: rencontre profs, carte étudiante, infos programme, visite campus
 
-### PRÊT d'équipement:
-- Local D2070
+### PRÊT et location d'équipement:
+- Se rendre en personne au Local D2070 pour emprunter de l'équipement (caméra, trépied, lumière, etc.)
 - Gratuit avec votre carte étudiante
 - Équipements disponibles : caméra, trépied, équipement d'éclairage et autre matériel multimédia
 - Priorité aux étudiants inscrits aux cours de photo et vidéo
