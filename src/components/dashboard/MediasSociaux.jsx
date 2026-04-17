@@ -22,7 +22,7 @@ export default function MediasSociaux() {
       <div className="medias__header">
         <div className="medias__title-group">
           <div className="medias__title">Médias Sociaux</div>
-          <div className="medias__subtitle">Projets étudiants mis en vedette sur Instagram</div>
+          <div className="medias__subtitle">Projets étudiants en vedette</div>
         </div>
 
         {/* Trio d'ornements — starburst / cercle-boussole / hexagone */}
@@ -71,7 +71,7 @@ export default function MediasSociaux() {
         <behold-widget feed-id="e8NrNqfCYUbqcKjV8Imi" />
       </div>
 
-      {/* Footer — icônes + handle */}
+      {/* Footer — icônes seulement */}
       <div className="medias__footer">
         <div className="medias__icons">
           <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="medias__icon" aria-label="Instagram">
@@ -90,7 +90,6 @@ export default function MediasSociaux() {
             </svg>
           </a>
         </div>
-        <div className="medias__handle">@design_graphique_lacite</div>
       </div>
 
     </div>

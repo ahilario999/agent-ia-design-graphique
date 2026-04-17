@@ -1123,7 +1123,7 @@ a:hover { opacity: 0.8; }
 }
 
 .medias__title {
-  font-size: var(--text-3xl);
+  font-size: 1.65rem;
   font-weight: 200;
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -1165,7 +1165,7 @@ a:hover { opacity: 0.8; }
 .medias__footer {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 8px;
   padding-top: 4px;
 }
