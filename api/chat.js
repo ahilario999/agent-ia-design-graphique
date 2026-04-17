@@ -271,12 +271,14 @@ export default async function handler(req, res) {
       return res.status(400).json({ error: 'Messages array required' });
     }
 
-    // 3. Formatage standard
+    // 3. Formatage standard — on garde seulement les 4 derniers messages
+    // pour éviter de dépasser la limite TPM de Groq (6000 tokens/min)
+    const recentMessages = messages.slice(-4);
     const formattedMessages = [
       { role: 'system', content: SYSTEM_PROMPT },
-      ...messages.map(msg => ({
+      ...recentMessages.map(msg => ({
         role: msg.role === 'user' ? 'user' : 'assistant',
-        content: msg.text 
+        content: msg.text
       }))
     ];
 
@@ -284,7 +286,7 @@ export default async function handler(req, res) {
       model: "llama-3.1-8b-instant",
       messages: formattedMessages,
       temperature: 0.7,
-      max_tokens: 1024,
+      max_tokens: 512,
     };
 
     const response = await fetch(url, {
@@ -304,7 +306,6 @@ export default async function handler(req, res) {
       await logUnanswered(lastQuestion);
       return res.status(200).json({
         reply: "Je n'ai pas la réponse pour toi, mais tu peux envoyer un message à M. Hilario : ahilar@lacitec.on.ca",
-        _debug: { groqStatus: response.status, groqError: data },
       });
     }
 
