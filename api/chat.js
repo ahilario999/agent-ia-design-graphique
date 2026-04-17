@@ -1,15 +1,7 @@
-// Proxy sécurisé — la clé Gemini reste sur Vercel, jamais dans le HTML
-// Même stratégie que ascenseur100 — modèle gemini-1.5-flash sur v1beta
+// Proxy sécurisé — la clé Groq reste sur Vercel, jamais dans le HTML
 
 // ─────────────────────────────────────────────────────────────
 // LOGGING DES QUESTIONS SANS RÉPONSE — via Resend (email)
-//
-// Pour activer, ajouter dans Vercel → Settings → Environment Variables :
-//   RESEND_API_KEY   → ta clé API sur resend.com (gratuit)
-//   RESEND_FROM      → ex. agent@tondomaine.com  (domaine vérifié dans Resend)
-//   NOTIFY_EMAIL     → ton email de réception (ex. ahilar@lacitec.on.ca)
-//
-// Si RESEND_API_KEY est absente, le bot fonctionne normalement sans logger.
 // ─────────────────────────────────────────────────────────────
 async function logUnanswered(question) {
   const resendKey = process.env.RESEND_API_KEY;
@@ -240,10 +232,14 @@ Antonio Hilario, Coordonnateur
 
 export default async function handler(req, res) {
   const origin = req.headers.origin || '';
+  
+  // ICI : On a ajouté ton URL explicite dans les permissions pour garantir l'accès
   const isAllowed =
     origin.includes('.vercel.app') ||
+    origin === 'https://bro-design-graphique.vercel.app' ||
     origin.startsWith('http://localhost') ||
     origin.startsWith('http://127.0.0.1');
+    
   const corsOrigin = isAllowed ? origin : 'https://vercel.app';
   res.setHeader('Access-Control-Allow-Origin', corsOrigin);
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
@@ -266,7 +262,7 @@ export default async function handler(req, res) {
       return res.status(400).json({ error: 'Messages array required' });
     }
 
-    // 3. Formatage standard (plus simple que Gemini)
+    // 3. Formatage standard
     const formattedMessages = [
       { role: 'system', content: SYSTEM_PROMPT },
       ...messages.map(msg => ({
@@ -276,7 +272,7 @@ export default async function handler(req, res) {
     ];
 
     const groqPayload = {
-      model: "llama3-8b-8192", // Modèle ultra-rapide et robuste
+      model: "llama3-8b-8192", 
       messages: formattedMessages,
       temperature: 0.7,
       max_tokens: 1024,
@@ -302,7 +298,7 @@ export default async function handler(req, res) {
       });
     }
 
-    // 4. Extraction de la réponse (syntaxe Groq/OpenAI)
+    // 4. Extraction de la réponse
     const reply = data.choices?.[0]?.message?.content 
       || "Je n'ai pas la réponse pour toi, mais tu peux envoyer un message à M. Hilario : ahilar@lacitec.on.ca";
 
@@ -317,7 +313,6 @@ export default async function handler(req, res) {
     console.error('[PROXY] Erreur réseau:', err.message);
     const lastQuestion = req.body?.messages?.[req.body?.messages?.length - 1]?.text || '(question inconnue)';
     
-    // Le logUnanswered est maintenant BIEN PLACÉ avant le return !
     await logUnanswered(lastQuestion); 
     
     return res.status(200).json({
