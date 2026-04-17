@@ -47,7 +47,7 @@ export default function ChatInterface() {
       console.error('Chat error:', error)
       setMessages((prev) => [...prev, {
         role: 'agent',
-        text: "Oups! Problème technique. Contacte monsieur Hilario: ahilar@lacitec.on.ca",
+        text: "Je n'ai pas la réponse pour toi, mais tu peux envoyer un message à M. Hilario : ahilar@lacitec.on.ca",
         timestamp: new Date(),
       }])
     } finally {

@@ -1,6 +1,64 @@
 // Proxy sécurisé — la clé Gemini reste sur Vercel, jamais dans le HTML
 // Même stratégie que ascenseur100 — modèle gemini-2.5-flash sur v1beta
 
+// ─────────────────────────────────────────────────────────────
+// LOGGING DES QUESTIONS SANS RÉPONSE — via Resend (email)
+//
+// Pour activer, ajouter dans Vercel → Settings → Environment Variables :
+//   RESEND_API_KEY   → ta clé API sur resend.com (gratuit)
+//   RESEND_FROM      → ex. agent@tondomaine.com  (domaine vérifié dans Resend)
+//   NOTIFY_EMAIL     → ton email de réception (ex. ahilar@lacitec.on.ca)
+//
+// Si RESEND_API_KEY est absente, le bot fonctionne normalement sans logger.
+// ─────────────────────────────────────────────────────────────
+async function logUnanswered(question) {
+  const resendKey = process.env.RESEND_API_KEY;
+  if (!resendKey) return; // Pas configuré — on skip silencieusement
+
+  const from = 'Agent IA La Cité <onboarding@resend.dev>';
+  const to   = 'ahilar@lacitec.on.ca';
+  const date    = new Date().toLocaleString('fr-CA', { timeZone: 'America/Toronto' });
+
+  const html = `
+    <div style="font-family:Arial,sans-serif;max-width:580px;margin:0 auto;padding:24px;color:#222;">
+      <h2 style="margin:0 0 4px;font-size:1.2em;color:#1a1a2e;">
+        🤖 Question sans réponse — Agent IA La Cité
+      </h2>
+      <p style="margin:0 0 20px;font-size:0.85em;color:#999;">${date}</p>
+
+      <div style="background:#f4f6ff;border-left:4px solid #4a7fd4;padding:14px 18px;border-radius:0 8px 8px 0;margin-bottom:20px;">
+        <p style="margin:0;font-size:0.8em;color:#666;text-transform:uppercase;letter-spacing:.05em;">Question de l'étudiant</p>
+        <p style="margin:8px 0 0;font-size:1.05em;color:#111;">"${question}"</p>
+      </div>
+
+      <div style="background:#fffbea;border:1px solid #f0d060;border-radius:8px;padding:14px 18px;">
+        <p style="margin:0;font-size:0.85em;color:#7a6000;">
+          💡 <strong>Comment améliorer le bot :</strong><br>
+          Ajoute la réponse à cette question dans le fichier <code>api/chat.js</code>,
+          section <strong>CONNAISSANCES SPÉCIFIQUES</strong> du system prompt.
+        </p>
+      </div>
+    </div>
+  `;
+
+  try {
+    const r = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: { 'Authorization': `Bearer ${resendKey}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        from,
+        to: [to],
+        subject: `🤖 Sans réponse : "${question.substring(0, 60)}${question.length > 60 ? '…' : ''}"`,
+        html,
+      }),
+    });
+    if (!r.ok) console.error('[LOG] Resend error:', r.status, await r.text());
+    else console.log('[LOG] Question loggée:', question.substring(0, 80));
+  } catch (err) {
+    console.error('[LOG] logUnanswered failed:', err.message);
+  }
+}
+
 const SYSTEM_PROMPT = `Tu es un agent IA convivial et rassurant pour le programme Design Graphique (61508 & 61777) au Collège La Cité à Ottawa.
 
 ## QUI TU ES:
@@ -46,8 +104,10 @@ IMPORTANT — Format obligatoire pour lisibilité dans l'interface:
 - Les liens doivent être écrits en format complet: https://exemple.com (jamais masqués)
 
 ## ESCALADE (QUAND TU NE SAIS PAS):
-Si tu n'es pas certain, réfère l'étudiant à monsieur Hilario:
-📧 ahilar@lacitec.on.ca | 📞 613-742-2483 poste 2601
+Si tu n'as pas la réponse, dis-le honnêtement et réfère l'étudiant à M. Hilario.
+Formulation à utiliser : "Je n'ai pas la réponse pour toi, mais tu peux envoyer un message à M. Hilario : ahilar@lacitec.on.ca"
+Tu peux aussi mentionner le téléphone ou le lien de rendez-vous si c'est pertinent :
+📞 613-742-2483 poste 2601
 📅 Prendre rendez-vous: https://bookings.cloud.microsoft/book/AntonioHilario@live.lacitec.on.ca/?ismsaljsauthenabled=true
 
 ## CONNAISSANCES SPÉCIFIQUES:
@@ -195,21 +255,31 @@ export default async function handler(req, res) {
 
     if (!response.ok) {
       console.error('[PROXY] Gemini ' + response.status + ':', JSON.stringify(data));
+      const lastQuestion = messages[messages.length - 1]?.text || '(question inconnue)';
+      await logUnanswered(lastQuestion);
       return res.status(200).json({
-        reply: "Désolé, je suis indisponible en ce moment. Contacte monsieur Hilario: ahilar@lacitec.on.ca",
+        reply: "Je n'ai pas la réponse pour toi, mais tu peux envoyer un message à M. Hilario : ahilar@lacitec.on.ca",
         debug: data,
       });
     }
 
     const reply = data.candidates?.[0]?.content?.parts?.[0]?.text
-      || "Désolé, je n'ai pas pu générer une réponse. Essaie encore!";
+      || "Je n'ai pas la réponse pour toi, mais tu peux envoyer un message à M. Hilario : ahilar@lacitec.on.ca";
+
+    // Détection : le modèle lui-même a escaladé (il ne savait pas)
+    if (reply.includes("Je n'ai pas la réponse pour toi")) {
+      const lastQuestion = messages[messages.length - 1]?.text || '(question inconnue)';
+      await logUnanswered(lastQuestion);
+    }
 
     return res.status(200).json({ reply });
 
   } catch (err) {
     console.error('[PROXY] Erreur réseau:', err.message);
     return res.status(200).json({
-      reply: "Désolé, j'ai eu un petit problème technique. Essaie encore dans quelques secondes, ou contacte monsieur Hilario: ahilar@lacitec.on.ca",
+      reply: "Je n'ai pas la réponse pour toi, mais tu peux envoyer un message à M. Hilario : ahilar@lacitec.on.ca",
     });
+    const lastQuestion = messages?.[messages.length - 1]?.text || '(question inconnue)';
+    await logUnanswered(lastQuestion);
   }
 }
