@@ -83,7 +83,6 @@ export default function HoraireWidget() {
       </div>
 
       <div className="horaire__disclaimer">
-        * Source : PDF officiel du programme 61508.
         Sujet à changement — validez sur votre portail eCité.
       </div>
     </div>
