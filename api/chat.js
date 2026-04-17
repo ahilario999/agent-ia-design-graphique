@@ -1,5 +1,5 @@
 // Proxy sécurisé — la clé Gemini reste sur Vercel, jamais dans le HTML
-// Même stratégie que ascenseur100 — modèle gemini-2.5-flash sur v1beta
+// Même stratégie que ascenseur100 — modèle gemini-1.5-flash sur v1beta
 
 // ─────────────────────────────────────────────────────────────
 // LOGGING DES QUESTIONS SANS RÉPONSE — via Resend (email)
@@ -255,7 +255,7 @@ export default async function handler(req, res) {
   const key = process.env.GEMINI_API_KEY;
   if (!key) return res.status(500).json({ error: 'GEMINI_API_KEY manquante.' });
 
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${key}`;
+  const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${key}`;
 
   try {
     const { messages } = req.body;
