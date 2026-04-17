@@ -69,9 +69,9 @@ const animClasses = [
   'date-ornament--float',
 ]
 
-export default function DatesImportantes() {
+export default function DatesImportantes({ style }) {
   return (
-    <div className="header-dates glass stagger-3">
+    <div className="header-dates glass stagger-3" style={style}>
       <div className="dates-header">
         <span className="dates-header__label">Calendrier</span>
         <span className="dates-header__rule" />
