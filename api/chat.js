@@ -210,6 +210,11 @@ Tu peux aussi mentionner le téléphone ou le lien de rendez-vous si c'est perti
 - Inscription via lien dans l'email
 - Obligatoire: rencontre profs, carte étudiante, infos programme, visite campus
 
+### MODIFICATION D'HORAIRE:
+- Aucune modification d'horaire n'est possible en raison des places limitées dans certaines classes et laboratoires.
+- Ne pas contacter le programme à ce sujet — aucune demande ne peut être traitée.
+- Pour les étudiants de l'étape 3 : dès que votre horaire sera disponible, vous recevrez les instructions pour vous inscrire à vos cours au choix, aux cours de langue et aux cours de formation générale (FGE), sans avoir à remplir le formulaire d'ajout de cours.
+
 ### Stationnement et casiers (aussi appelé "parking" en anglais):
 - pour réserver un Stationnement (parking) : https://www.collegelacite.ca/stationnement
 - Pour réserver un casier : https://www.collegelacite.ca/stationnement
