@@ -65,7 +65,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow: hidden;
-  cursor: none;
 }
 
 /* ============================================
@@ -818,6 +817,132 @@ a:hover { opacity: 0.8; }
   font-size: 0.5rem;
   opacity: 0.4;
   flex-shrink: 0;
+}
+
+/* ============================================
+   DESIGN VEILLE WIDGET — Actualités & Inspiration
+   ============================================ */
+.design-veille {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+}
+
+.design-veille__header {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 4px;
+}
+
+.design-veille__title {
+  font-size: var(--text-2xl);
+  font-weight: 200;
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+.design-veille__subtitle {
+  font-size: var(--text-xs);
+  opacity: 0.5;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* Grille 3 articles */
+.design-veille__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+/* Carte article */
+.design-veille__card {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 10px;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 0;
+  padding: 8px;
+  background: rgba(255,255,255,0.02);
+  transition: all var(--transition-normal);
+  text-decoration: none;
+  color: var(--color-text);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.design-veille__card:hover {
+  background: rgba(255,255,255,0.05);
+  border-color: rgba(255,255,255,0.15);
+}
+
+/* Image wrapper */
+.design-veille__image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 0;
+}
+
+.design-veille__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 300ms ease-out;
+}
+
+.design-veille__card:hover .design-veille__image {
+  transform: scale(1.05);
+}
+
+.design-veille__image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0,0,0,0.3) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* Contenu */
+.design-veille__content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  justify-content: space-between;
+  min-height: 100%;
+}
+
+.design-veille__card-title {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.design-veille__description {
+  font-size: var(--text-xs);
+  opacity: 0.65;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.design-veille__source {
+  font-size: 0.85rem;
+  opacity: 0.4;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Footer */
+.design-veille__footer {
+  font-size: var(--text-xs);
+  opacity: 0.35;
+  text-align: center;
+  padding-top: 4px;
+  border-top: 1px solid rgba(255,255,255,0.05);
 }
 
 /* (ancien .flex-widget supprimé — remplacé par .widget-card) */

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import LoadingScreen from '../components/dashboard/LoadingScreen'
 import DynamicBackground from '../components/dashboard/DynamicBackground'
-import CustomCursor from '../components/CustomCursor'
 import HeaderBRO from '../components/dashboard/HeaderBRO'
 import DatesImportantes from '../components/dashboard/DatesImportantes'
 import HoraireWidget from '../components/dashboard/HoraireWidget'
@@ -9,7 +8,7 @@ import ImpressionWidget from '../components/dashboard/ImpressionWidget'
 import PretMultimediaWidget from '../components/dashboard/PretMultimediaWidget'
 import TutoratWidget from '../components/dashboard/TutoratWidget'
 import FlexWidget from '../components/dashboard/FlexWidget'
-import FAQWidget from '../components/dashboard/FAQWidget'
+import DesignVeilleWidget from '../components/dashboard/DesignVeilleWidget'
 import MediasSociaux from '../components/dashboard/MediasSociaux'
 import ContactWidget from '../components/dashboard/ContactWidget'
 import ChatInterface from '../components/ChatInterface'
@@ -48,7 +47,6 @@ export default function App() {
     <>
       <LoadingScreen visible={isLoading} />
       <DynamicBackground />
-      <CustomCursor />
 
       <div className="dashboard">
         {/* ===== ROW 1 : Header ===== */}
@@ -129,7 +127,7 @@ export default function App() {
             <TutoratWidget />
             <FlexWidget />
           </div>
-          <FAQWidget />
+          <DesignVeilleWidget />
           <MediasSociaux />
           <ContactWidget />
         </div>
