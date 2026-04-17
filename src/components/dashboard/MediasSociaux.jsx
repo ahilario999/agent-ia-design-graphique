@@ -20,7 +20,10 @@ export default function MediasSociaux() {
 
       {/* En-tête — titre + trio à droite */}
       <div className="medias__header">
-        <div className="medias__title">Médias Sociaux</div>
+        <div className="medias__title-group">
+          <div className="medias__title">Médias Sociaux</div>
+          <div className="medias__subtitle">Projets étudiants mis en vedette sur Instagram</div>
+        </div>
 
         {/* Trio d'ornements — starburst / cercle-boussole / hexagone */}
         <div className="widget-ornament-trio">
