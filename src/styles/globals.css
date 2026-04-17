@@ -633,6 +633,12 @@ a:hover { opacity: 0.8; }
   flex: 1;
 }
 
+/* Dernière widgets-row dans grid-right (Médias + Contact) — s'étire verticalement */
+.grid-right > .widgets-row:last-child {
+  flex: 1;
+  align-items: stretch;
+}
+
 /* ============================================
    HORAIRE WIDGET
    ============================================ */
@@ -865,6 +871,7 @@ a:hover { opacity: 0.8; }
    DESIGN VEILLE WIDGET — Actualités & Inspiration
    ============================================ */
 .design-veille {
+  flex: 2;
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -1190,8 +1197,11 @@ a:hover { opacity: 0.8; }
    CONTACT — boîte plus imposante comme le Figma
    ============================================ */
 .contact {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding: 20px 22px;
-  flex: 0 0 auto;
 }
 
 /* Titre en capsule avec ornement — style B.R.O */

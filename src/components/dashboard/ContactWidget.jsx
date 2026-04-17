@@ -6,7 +6,6 @@ export default function ContactWidget() {
       <div className="contact__title-pill">
         <span className="contact__title-plus">+</span>
         <span className="contact__title-text">Pour nous rejoindre</span>
-        <span className="contact__title-ornament">||||||||||||||||||||||||||||||||</span>
       </div>
       <div className="contact__info">
         ahilar@lacitec.on.ca | 613-742-2493 x2601
