@@ -252,10 +252,12 @@ export default async function handler(req, res) {
   if (req.method === 'OPTIONS') return res.status(200).end();
   if (req.method !== 'POST') return res.status(405).json({ error: 'Méthode non permise.' });
 
-  const key = process.env.GEMINI_API_KEY;
-  if (!key) return res.status(500).json({ error: 'GEMINI_API_KEY manquante.' });
+  // 1. On appelle la clé GROQ
+  const key = process.env.GROQ_API_KEY;
+  if (!key) return res.status(500).json({ error: 'GROQ_API_KEY manquante.' });
 
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite:generateContent?key=${key}`;
+  // 2. L'URL universelle de Groq
+  const url = 'https://api.groq.com/openai/v1/chat/completions';
 
   try {
     const { messages } = req.body;
@@ -264,44 +266,46 @@ export default async function handler(req, res) {
       return res.status(400).json({ error: 'Messages array required' });
     }
 
-    // Construire le payload Gemini avec system_instruction côté serveur
-    const geminiPayload = {
-      systemInstruction: {
-        parts: [{ text: SYSTEM_PROMPT }],
-      },
-      contents: messages.map(msg => ({
-        role: msg.role === 'user' ? 'user' : 'model',
-        parts: [{ text: msg.text }],
-      })),
-      generationConfig: {
-        temperature: 0.7,
-        topP: 0.9,
-        maxOutputTokens: 1024,
-      },
+    // 3. Formatage standard (plus simple que Gemini)
+    const formattedMessages = [
+      { role: 'system', content: SYSTEM_PROMPT },
+      ...messages.map(msg => ({
+        role: msg.role === 'user' ? 'user' : 'assistant',
+        content: msg.text 
+      }))
+    ];
+
+    const groqPayload = {
+      model: "llama3-8b-8192", // Modèle ultra-rapide et robuste
+      messages: formattedMessages,
+      temperature: 0.7,
+      max_tokens: 1024,
     };
 
     const response = await fetch(url, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(geminiPayload),
+      headers: { 
+        'Authorization': `Bearer ${key}`,
+        'Content-Type': 'application/json' 
+      },
+      body: JSON.stringify(groqPayload),
     });
 
     const data = await response.json();
 
     if (!response.ok) {
-      console.error('[PROXY] Gemini ' + response.status + ':', JSON.stringify(data));
+      console.error('[PROXY] Groq Erreur:', response.status, JSON.stringify(data));
       const lastQuestion = messages[messages.length - 1]?.text || '(question inconnue)';
       await logUnanswered(lastQuestion);
       return res.status(200).json({
         reply: "Je n'ai pas la réponse pour toi, mais tu peux envoyer un message à M. Hilario : ahilar@lacitec.on.ca",
-        debug: data,
       });
     }
 
-    const reply = data.candidates?.[0]?.content?.parts?.[0]?.text
+    // 4. Extraction de la réponse (syntaxe Groq/OpenAI)
+    const reply = data.choices?.[0]?.message?.content 
       || "Je n'ai pas la réponse pour toi, mais tu peux envoyer un message à M. Hilario : ahilar@lacitec.on.ca";
 
-    // Détection : le modèle lui-même a escaladé (il ne savait pas)
     if (reply.includes("Je n'ai pas la réponse pour toi")) {
       const lastQuestion = messages[messages.length - 1]?.text || '(question inconnue)';
       await logUnanswered(lastQuestion);
@@ -311,10 +315,13 @@ export default async function handler(req, res) {
 
   } catch (err) {
     console.error('[PROXY] Erreur réseau:', err.message);
+    const lastQuestion = req.body?.messages?.[req.body?.messages?.length - 1]?.text || '(question inconnue)';
+    
+    // Le logUnanswered est maintenant BIEN PLACÉ avant le return !
+    await logUnanswered(lastQuestion); 
+    
     return res.status(200).json({
       reply: "Je n'ai pas la réponse pour toi, mais tu peux envoyer un message à M. Hilario : ahilar@lacitec.on.ca",
     });
-    const lastQuestion = messages?.[messages.length - 1]?.text || '(question inconnue)';
-    await logUnanswered(lastQuestion);
   }
 }
