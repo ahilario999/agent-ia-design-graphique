@@ -210,6 +210,12 @@ Tu peux aussi mentionner le téléphone ou le lien de rendez-vous si c'est perti
 - Inscription via lien dans l'email
 - Obligatoire: rencontre profs, carte étudiante, infos programme, visite campus
 
+### PRÊT MULTIMÉDIA:
+- Local D2070
+- Gratuit avec votre carte étudiante
+- Équipements disponibles : caméra, trépied, équipement d'éclairage et autre matériel multimédia
+- Priorité aux étudiants inscrits aux cours de photo et vidéo
+
 ### MODIFICATION D'HORAIRE:
 - Aucune modification d'horaire n'est possible en raison des places limitées dans certaines classes et laboratoires.
 - Ne pas contacter le programme à ce sujet — aucune demande ne peut être traitée.
