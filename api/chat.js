@@ -266,7 +266,7 @@ export default async function handler(req, res) {
 
     // Construire le payload Gemini avec system_instruction côté serveur
     const geminiPayload = {
-      system_instruction: {
+      systemInstruction: {
         parts: [{ text: SYSTEM_PROMPT }],
       },
       contents: messages.map(msg => ({
