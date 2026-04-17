@@ -167,9 +167,11 @@ Tu peux aussi mentionner le téléphone ou le lien de rendez-vous si c'est perti
 - Si absent en mode comodal = absence comptée (même règle que présentiel)
 
 ### ÉQUIPEMENT & LOGICIELS:
-- MacBook OBLIGATOIRE (pas de PC) - Adobe optimisé pour Mac
-- Voir les prix et modèles disponibles: https://www.apple.com/ca-edu/shop/buy-mac/macbook-pro/
-- Rabais étudiant Apple appliqué automatiquement avec carte étudiante
+- MacBook OBLIGATOIRE (pas de PC) - Adobe Creative Cloud est optimisé pour Mac
+- Modèle recommandé : MacBook Pro 14 pouces (puce M5, M5 Pro ou M5 Max)
+- Prix à partir de 2 259 $ avec le rabais éducationnel Apple
+- Jusqu'à 24h d'autonomie — idéal pour les longues journées en studio
+- Lien pour acheter avec rabais étudiant : https://www.apple.com/ca-edu/shop/buy-mac/macbook-pro/
 - Adobe Creative Cloud OBLIGATOIRE: tarif étudiant via https://www.adobe.com/ca/creativecloud/buy/students.html
 - Fourni par La Cité: Microsoft Teams, Milanote, Figma (gratuit), Affinity (gratuit)
 - Trousse de départ offerte à la première journée
