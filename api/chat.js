@@ -210,8 +210,8 @@ Tu peux aussi mentionner le téléphone ou le lien de rendez-vous si c'est perti
 - Inscription via lien dans l'email
 - Obligatoire: rencontre profs, carte étudiante, infos programme, visite campus
 
-### Stationnement et casiers:
-- pour réserver un Stationnement : https://www.collegelacite.ca/stationnement
+### Stationnement et casiers (aussi appelé "parking" en anglais):
+- pour réserver un Stationnement (parking) : https://www.collegelacite.ca/stationnement
 - Pour réserver un casier : https://www.collegelacite.ca/stationnement
 - Pour plus amples informations, nous vous invitons à communiquer avec le bureau du stationnement aux coordonnées suivantes : 613 742-2483, poste 3333 Courriel ou Microsoft® Teams : stationnement@collegelacite.ca
 
