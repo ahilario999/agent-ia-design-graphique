@@ -58,12 +58,32 @@ const BOKEH_PRESETS = [
 
 export default function DynamicBackground() {
   const [bgStyle, setBgStyle] = useState({})
+  const [currentPresetIdx, setCurrentPresetIdx] = useState(0)
   const containerRef = useRef(null)
 
   useEffect(() => {
+    // Initialise avec un preset aléatoire
     const idx = Math.floor(Math.random() * BOKEH_PRESETS.length)
+    setCurrentPresetIdx(idx)
     setBgStyle({ background: BOKEH_PRESETS[idx].replace(/\n/g, '') })
   }, [])
+
+  // Morphing subtil des gradients toutes les 20 secondes
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentPresetIdx((prev) => (prev + 1) % BOKEH_PRESETS.length)
+    }, 20000) // 20 secondes entre chaque transition
+
+    return () => clearInterval(interval)
+  }, [])
+
+  // Met à jour le fond avec transition lisse
+  useEffect(() => {
+    setBgStyle({
+      background: BOKEH_PRESETS[currentPresetIdx].replace(/\n/g, ''),
+      transition: 'background 6s ease-in-out', // Transition lente et douce
+    })
+  }, [currentPresetIdx])
 
   return (
     <div className="bg-dynamic" ref={containerRef} style={bgStyle}>

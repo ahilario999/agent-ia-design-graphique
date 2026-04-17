@@ -65,6 +65,35 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow: hidden;
+  cursor: none;
+}
+
+/* ============================================
+   CUSTOM CURSOR — Rétroaction subtile
+   ============================================ */
+.cursor-dot {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: opacity 150ms ease-out, transform 150ms ease-out;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
+}
+
+.cursor-halo {
+  position: fixed;
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: opacity 200ms ease-out, transform 200ms ease-out;
 }
 
 #root {
@@ -1353,6 +1382,53 @@ a:hover { opacity: 0.8; }
   66% { transform: translate(-2px, 1px); }
 }
 
+/* Widget entrance — scale subtil */
+@keyframes scaleInSubtle {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Background gradient morphing — très subtil */
+@keyframes gradientMorphing {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Chat message paragraph stagger entrance */
+@keyframes paragraphSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Ornament hover — brightness et scale subtil */
+@keyframes ornamentGlow {
+  0% {
+    filter: brightness(1);
+  }
+  100% {
+    filter: brightness(1.15);
+  }
+}
+
 /* Classes d'animation pour ornements — ultra subtiles */
 .ornament--spin-slow {
   animation: spinSlow 50s linear infinite;
@@ -1366,15 +1442,37 @@ a:hover { opacity: 0.8; }
   animation: floatSubtle 12s ease-in-out infinite;
 }
 
-/* Stagger entrance */
-.stagger-1 { animation: fadeInUp 0.6s ease-out 0.1s both; }
-.stagger-2 { animation: fadeInUp 0.6s ease-out 0.2s both; }
-.stagger-3 { animation: fadeInUp 0.6s ease-out 0.3s both; }
-.stagger-4 { animation: fadeInUp 0.6s ease-out 0.4s both; }
-.stagger-5 { animation: fadeInUp 0.6s ease-out 0.5s both; }
-.stagger-6 { animation: fadeInUp 0.6s ease-out 0.6s both; }
-.stagger-7 { animation: fadeInUp 0.6s ease-out 0.7s both; }
-.stagger-8 { animation: fadeInUp 0.6s ease-out 0.8s both; }
+/* Stagger entrance — combinaison subtile d'opacité et de scale */
+.stagger-1 { animation: scaleInSubtle 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s both; }
+.stagger-2 { animation: scaleInSubtle 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s both; }
+.stagger-3 { animation: scaleInSubtle 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s both; }
+.stagger-4 { animation: scaleInSubtle 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 0.4s both; }
+.stagger-5 { animation: scaleInSubtle 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 0.5s both; }
+.stagger-6 { animation: scaleInSubtle 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 0.6s both; }
+.stagger-7 { animation: scaleInSubtle 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 0.7s both; }
+.stagger-8 { animation: scaleInSubtle 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 0.8s both; }
+
+/* Ornament hover effect — subtil et rapide */
+.ornament-interactive {
+  transition: filter 200ms ease-out;
+}
+
+.ornament-interactive:hover {
+  filter: brightness(1.2);
+}
+
+/* Chat message paragraph — entrance stagger */
+.message-paragraph {
+  animation: paragraphSlideIn 0.4s ease-out forwards;
+  opacity: 0;
+}
+
+/* Applique stagger delays aux paragraphes */
+.message-paragraph:nth-child(1) { animation-delay: 0ms; }
+.message-paragraph:nth-child(2) { animation-delay: 80ms; }
+.message-paragraph:nth-child(3) { animation-delay: 160ms; }
+.message-paragraph:nth-child(4) { animation-delay: 240ms; }
+.message-paragraph:nth-child(5) { animation-delay: 320ms; }
 
 /* ============================================
    SCROLLBAR

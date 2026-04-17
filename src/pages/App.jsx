@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import LoadingScreen from '../components/dashboard/LoadingScreen'
 import DynamicBackground from '../components/dashboard/DynamicBackground'
+import CustomCursor from '../components/CustomCursor'
 import HeaderBRO from '../components/dashboard/HeaderBRO'
 import DatesImportantes from '../components/dashboard/DatesImportantes'
 import HoraireWidget from '../components/dashboard/HoraireWidget'
@@ -47,6 +48,7 @@ export default function App() {
     <>
       <LoadingScreen visible={isLoading} />
       <DynamicBackground />
+      <CustomCursor />
 
       <div className="dashboard">
         {/* ===== ROW 1 : Header ===== */}

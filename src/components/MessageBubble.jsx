@@ -42,7 +42,7 @@ function formatMessage(text) {
     ))
 
     return (
-      <p key={pIdx} className="message__para">
+      <p key={pIdx} className="message__para message-paragraph">
         {content}
       </p>
     )

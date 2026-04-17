@@ -46,7 +46,7 @@ export default function HoraireWidget() {
       <div className="horaire__header">
         <div className="horaire__title">Horaire</div>
         {/* Ornement remplissant l'espace horizontal à droite du titre */}
-        <svg className="horaire__line-ornament" width="100%" height="20" viewBox="0 0 300 20" preserveAspectRatio="none" fill="none">
+        <svg className="horaire__line-ornament ornament-interactive" width="100%" height="20" viewBox="0 0 300 20" preserveAspectRatio="none" fill="none">
           <line x1="0" y1="10" x2="300" y2="10" stroke="rgba(255,255,255,0.15)" strokeWidth="1.2"/>
           {/* Points décorateurs espacés */}
           <circle cx="20" cy="10" r="1.5" fill="rgba(255,255,255,0.25)"/>
