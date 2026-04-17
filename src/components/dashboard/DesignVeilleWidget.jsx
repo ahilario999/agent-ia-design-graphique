@@ -32,9 +32,17 @@ const VEILLE_DATA = [
 export default function DesignVeilleWidget() {
   return (
     <div className="design-veille glass stagger-7">
-      {/* Titre */}
+      {/* En-tête avec titre + ligne ornementale */}
       <div className="design-veille__header">
-        <h3 className="design-veille__title">Veille Design</h3>
+        <div className="design-veille__title">Veille Design</div>
+        <svg className="horaire__line-ornament ornament-interactive" width="100%" height="20" viewBox="0 0 300 20" preserveAspectRatio="none" fill="none">
+          <line x1="0" y1="10" x2="300" y2="10" stroke="rgba(255,255,255,0.15)" strokeWidth="1.2"/>
+          <circle cx="20" cy="10" r="1.5" fill="rgba(255,255,255,0.25)"/>
+          <circle cx="80" cy="10" r="1" fill="rgba(255,255,255,0.15)"/>
+          <circle cx="160" cy="10" r="1.5" fill="rgba(255,255,255,0.2)"/>
+          <circle cx="240" cy="10" r="1" fill="rgba(255,255,255,0.15)"/>
+          <circle cx="290" cy="10" r="1.5" fill="rgba(255,255,255,0.25)"/>
+        </svg>
       </div>
 
       {/* Rangée horizontale d'articles */}

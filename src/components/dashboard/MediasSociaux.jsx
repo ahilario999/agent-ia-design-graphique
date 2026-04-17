@@ -7,8 +7,43 @@ const YOUTUBE_URL = 'https://www.youtube.com/'
 export default function MediasSociaux() {
   return (
     <div className="medias glass stagger-7">
-      <div className="medias__label">[ Signal ]</div>
-      <div className="medias__title">Médias Sociaux</div>
+
+      {/* Ornement starburst — rotation lente en haut à droite */}
+      <div className="ornament ornament--top-right ornament--spin-slow">
+        <svg width="48" height="48" viewBox="0 0 80 80" fill="none" className="ornament-interactive">
+          <line x1="40" y1="2" x2="40" y2="78" stroke="rgba(255,255,255,0.2)" strokeWidth="1.2"/>
+          <line x1="2" y1="40" x2="78" y2="40" stroke="rgba(255,255,255,0.2)" strokeWidth="1.2"/>
+          <line x1="11.7" y1="11.7" x2="68.3" y2="68.3" stroke="rgba(255,255,255,0.2)" strokeWidth="1.2"/>
+          <line x1="68.3" y1="11.7" x2="11.7" y2="68.3" stroke="rgba(255,255,255,0.2)" strokeWidth="1.2"/>
+          <circle cx="40" cy="2" r="2.5" fill="rgba(255,255,255,0.25)"/>
+          <circle cx="78" cy="40" r="2.5" fill="rgba(255,255,255,0.25)"/>
+          <circle cx="40" cy="78" r="2.5" fill="rgba(255,255,255,0.25)"/>
+          <circle cx="2" cy="40" r="2.5" fill="rgba(255,255,255,0.25)"/>
+          <circle cx="40" cy="40" r="3.5" fill="rgba(255,255,255,0.15)"/>
+        </svg>
+      </div>
+
+      {/* Ornement cercle — pulsation en bas à gauche */}
+      <div className="ornament ornament--bottom-right ornament--pulse-slow" style={{ opacity: 0.3 }}>
+        <svg width="36" height="36" viewBox="0 0 60 60" fill="none">
+          <circle cx="30" cy="30" r="26" stroke="rgba(255,255,255,0.35)" strokeWidth="1"/>
+          <circle cx="30" cy="30" r="18" stroke="rgba(255,255,255,0.2)" strokeWidth="0.8"/>
+          <circle cx="30" cy="30" r="4" fill="rgba(255,255,255,0.2)"/>
+        </svg>
+      </div>
+
+      {/* En-tête avec titre + ligne ornementale */}
+      <div className="medias__header">
+        <div className="medias__title">Médias Sociaux</div>
+        <svg className="horaire__line-ornament ornament-interactive" width="100%" height="20" viewBox="0 0 300 20" preserveAspectRatio="none" fill="none">
+          <line x1="0" y1="10" x2="300" y2="10" stroke="rgba(255,255,255,0.15)" strokeWidth="1.2"/>
+          <circle cx="20" cy="10" r="1.5" fill="rgba(255,255,255,0.25)"/>
+          <circle cx="100" cy="10" r="1" fill="rgba(255,255,255,0.15)"/>
+          <circle cx="200" cy="10" r="1.5" fill="rgba(255,255,255,0.2)"/>
+          <circle cx="280" cy="10" r="1" fill="rgba(255,255,255,0.15)"/>
+        </svg>
+      </div>
+
       <div className="medias__insta-hint">Dernier post sur Instagram →</div>
 
       <div className="medias__row">
