@@ -1,7 +1,6 @@
 import React from 'react'
 
-// SOURCE DE RÉFÉRENCE : https://www.etapes.com/
-// Mettre à jour manuellement avec les derniers articles du site
+// VEILLE DESIGN — Sources variées à mettre à jour manuellement
 // Structure : { id, image, title, link }
 const VEILLE_DATA = [
   {
@@ -14,29 +13,28 @@ const VEILLE_DATA = [
     id: 2,
     image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=400&fit=crop',
     title: 'Typographie : les tendances du moment',
-    link: 'https://www.etapes.com/typographie/',
+    link: 'https://www.itsnicethat.com/categories/graphic-design',
   },
   {
     id: 3,
     image: 'https://images.unsplash.com/photo-1572044162444-ad60f128bdea?w=600&h=400&fit=crop',
     title: 'Packaging design primé 2026',
-    link: 'https://www.etapes.com/packaging/',
+    link: 'https://www.underconsideration.com/brandnew/',
   },
   {
     id: 4,
     image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop',
     title: 'Motion & design interactif',
-    link: 'https://www.etapes.com/motion-design/',
+    link: 'https://www.awwwards.com/',
   },
 ]
 
 export default function DesignVeilleWidget() {
   return (
     <div className="design-veille glass stagger-7">
-      {/* Titre + Ornement */}
+      {/* Titre */}
       <div className="design-veille__header">
         <h3 className="design-veille__title">Veille Design</h3>
-        <div className="design-veille__subtitle">etapes.com — Actualités & Inspiration</div>
       </div>
 
       {/* Rangée horizontale d'articles */}
@@ -65,10 +63,6 @@ export default function DesignVeilleWidget() {
         ))}
       </div>
 
-      {/* Footer */}
-      <div className="design-veille__footer">
-        Source : etapes.com — à mettre à jour manuellement
-      </div>
     </div>
   )
 }
