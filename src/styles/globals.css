@@ -639,6 +639,11 @@ a:hover { opacity: 0.8; }
   align-items: stretch;
 }
 
+/* Première widgets-row dans grid-right (Tutorat + Stage) — blocs carrés */
+.grid-right > .widgets-row:first-child > * {
+  aspect-ratio: 1;
+}
+
 /* ============================================
    HORAIRE WIDGET
    ============================================ */
@@ -1116,18 +1121,20 @@ a:hover { opacity: 0.8; }
   opacity: 0.45;
 }
 
+.medias__title-group {
+  container-type: inline-size;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
 .medias__title {
-  font-size: var(--text-3xl);
+  font-size: clamp(0.85rem, 11cqi, var(--text-3xl));
   font-weight: 200;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   line-height: 1.1;
   white-space: nowrap;
-}
-
-.medias__title-group {
-  display: flex;
-  flex-direction: column;
 }
 
 .medias__subtitle {
