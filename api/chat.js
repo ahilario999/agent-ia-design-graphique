@@ -304,6 +304,7 @@ export default async function handler(req, res) {
       await logUnanswered(lastQuestion);
       return res.status(200).json({
         reply: "Je n'ai pas la réponse pour toi, mais tu peux envoyer un message à M. Hilario : ahilar@lacitec.on.ca",
+        _debug: { groqStatus: response.status, groqError: data },
       });
     }
 
