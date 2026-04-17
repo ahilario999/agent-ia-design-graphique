@@ -73,17 +73,45 @@ export default function DesignVeilleWidget() {
         </svg>
       </div>
 
-      {/* En-tête avec titre + ligne ornementale */}
+      {/* En-tête */}
       <div className="design-veille__header">
         <div className="design-veille__title">Veille Design</div>
-        <svg className="horaire__line-ornament ornament-interactive" width="100%" height="20" viewBox="0 0 300 20" preserveAspectRatio="none" fill="none">
-          <line x1="0" y1="10" x2="300" y2="10" stroke="rgba(255,255,255,0.15)" strokeWidth="1.2"/>
-          <circle cx="20" cy="10" r="1.5" fill="rgba(255,255,255,0.25)"/>
-          <circle cx="80" cy="10" r="1" fill="rgba(255,255,255,0.15)"/>
-          <circle cx="160" cy="10" r="1.5" fill="rgba(255,255,255,0.2)"/>
-          <circle cx="240" cy="10" r="1" fill="rgba(255,255,255,0.15)"/>
-          <circle cx="290" cy="10" r="1.5" fill="rgba(255,255,255,0.25)"/>
-        </svg>
+
+        {/* Trio d'ornements — 3 losanges variés côte à côte */}
+        <div className="widget-ornament-trio">
+
+          {/* Losange 1 — double contour + point central */}
+          <svg width="26" height="26" viewBox="0 0 40 40" fill="none"
+            className="ornament-interactive ornament--spin-slow">
+            <polygon points="20,2 38,20 20,38 2,20"
+              stroke="rgba(255,255,255,0.35)" strokeWidth="1.2" fill="none"/>
+            <polygon points="20,10 30,20 20,30 10,20"
+              stroke="rgba(255,255,255,0.2)" strokeWidth="1" fill="none"/>
+            <circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.3)"/>
+          </svg>
+
+          {/* Losange 2 — contour + ticks aux quatre pointes */}
+          <svg width="26" height="26" viewBox="0 0 40 40" fill="none"
+            className="ornament-interactive ornament--pulse-slow" style={{ animationDelay: '-3s' }}>
+            <polygon points="20,2 38,20 20,38 2,20"
+              stroke="rgba(255,255,255,0.28)" strokeWidth="1.2" fill="none"/>
+            <line x1="20" y1="2"  x2="20" y2="10" stroke="rgba(255,255,255,0.5)" strokeWidth="1.5"/>
+            <line x1="38" y1="20" x2="30" y2="20" stroke="rgba(255,255,255,0.5)" strokeWidth="1.5"/>
+            <line x1="20" y1="38" x2="20" y2="30" stroke="rgba(255,255,255,0.5)" strokeWidth="1.5"/>
+            <line x1="2"  y1="20" x2="10" y2="20" stroke="rgba(255,255,255,0.5)" strokeWidth="1.5"/>
+          </svg>
+
+          {/* Losange 3 — cœur rempli + contour léger */}
+          <svg width="26" height="26" viewBox="0 0 40 40" fill="none"
+            className="ornament-interactive ornament--float-slow" style={{ animationDelay: '-6s' }}>
+            <polygon points="20,2 38,20 20,38 2,20"
+              stroke="rgba(255,255,255,0.22)" strokeWidth="1.2" fill="none"/>
+            <polygon points="20,11 29,20 20,29 11,20"
+              fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.35)" strokeWidth="0.9"/>
+            <circle cx="20" cy="20" r="2.5" fill="rgba(255,255,255,0.35)"/>
+          </svg>
+
+        </div>
       </div>
 
       {/* Rangée horizontale d'articles */}
