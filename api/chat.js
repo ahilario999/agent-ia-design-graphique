@@ -134,13 +134,13 @@ Tu peux aussi mentionner le téléphone ou le lien de rendez-vous si c'est perti
 - Image de marque (024661 MDI): Mer 9h-12h, D2050, Nicolas Beland Latreille
 - Design adaptatif (024658 TEC): Mer 13h-16h, D2050, Nicolas Beland Latreille
 - Typographie exploratoire (024651 ART): Jeu 9h-12h, D2050, Miguel Boisvenue
-- Animation graphique (024645 ART): Jeu 13h-16h, En ligne, Antonio
+- Animation graphique (024645 ART): Jeu 13h-16h, En ligne, Antonio Hilario
 - English (ENL): Ven 9h-12h, Comodal
 
 #### HORAIRE ÉTAPE 5 (Automne 2025):
 - Production numérique (024663 TEC): Lun 9h-12h, D2060, Nicolas B-Latreille
 - Signes et symboles (024664 DSN): Lun 13h-16h, D2060, Stephanie Hubell-Lacroix
-- Portfolio S.010 (024669 ART): Mar 9h-12h, En ligne, Antonio
+- Portfolio S.010 (024669 ART): Mar 9h-12h, En ligne, Antonio Hilario
 - Affiches (024656 ART): Mer 9h-12h, D2060, Vanessa Delaveau
 - Portfolio numérique et autopromotion (024674 ART): Mer 13h-16h, En ligne, Antonio
 - Production d'impression numérique (024648 ART): Jeu 9h-12h, D2060, Patrick Ranger
