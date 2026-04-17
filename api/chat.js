@@ -171,7 +171,7 @@ Tu peux aussi mentionner le téléphone ou le lien de rendez-vous si c'est perti
 - Modèle recommandé : MacBook Pro 14 pouces (puce M5, M5 Pro ou M5 Max)
 - Prix à partir de 2 259 $ avec le rabais éducationnel Apple
 - Jusqu'à 24h d'autonomie — idéal pour les longues journées en studio
-- Lien pour acheter avec rabais étudiant : https://www.apple.com/ca-edu/shop/buy-mac/macbook-pro/
+- Lien pour acheter avec rabais étudiant : https://www.apple.com/xf-edu/shop/buy-mac/macbook-pro/14-po
 - Adobe Creative Cloud OBLIGATOIRE: tarif étudiant via https://www.adobe.com/ca/creativecloud/buy/students.html
 - Fourni par La Cité: Microsoft Teams, Milanote, Figma (gratuit), Affinity (gratuit)
 - Trousse de départ offerte à la première journée
