@@ -1,31 +1,32 @@
 import React from 'react'
 
-// TODO: Connecter à Supabase pour données dynamiques — mises à jour par IA tous les 3 jours
-// Structure : { id, image, title, description, link, source }
+// SOURCE DE RÉFÉRENCE : https://www.etapes.com/
+// Mettre à jour manuellement avec les derniers articles du site
+// Structure : { id, image, title, link }
 const VEILLE_DATA = [
   {
     id: 1,
-    image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=300&fit=crop',
-    title: 'Tendances Typographie 2026',
-    description: 'Explorer les nouvelles directions en typographie : minimalisme extrême et retours classiques',
-    link: 'https://www.typewolf.com',
-    source: 'Typewolf',
+    image: 'https://images.unsplash.com/photo-1636622433525-127afdf3662d?w=600&h=400&fit=crop',
+    title: 'Identités visuelles qui marquent',
+    link: 'https://www.etapes.com/identite-visuelle/',
   },
   {
     id: 2,
-    image: 'https://images.unsplash.com/photo-1545259741-2ea3ebf61fa3?w=400&h=300&fit=crop',
-    title: 'Branding Minimaliste',
-    description: 'Comment les marques redéfinissent leur identité avec des approaches épurées et directes',
-    link: 'https://www.instagram.com/designspiration/',
-    source: 'Design Inspiration',
+    image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=400&fit=crop',
+    title: 'Typographie : les tendances du moment',
+    link: 'https://www.etapes.com/typographie/',
   },
   {
     id: 3,
-    image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=300&fit=crop',
-    title: 'Motion Design — Cas d\'étude',
-    description: 'Analyse de projets award-winning : technique, stratégie et impact utilisateur',
-    link: 'https://www.motionographer.com',
-    source: 'Motionographer',
+    image: 'https://images.unsplash.com/photo-1572044162444-ad60f128bdea?w=600&h=400&fit=crop',
+    title: 'Packaging design primé 2026',
+    link: 'https://www.etapes.com/packaging/',
+  },
+  {
+    id: 4,
+    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop',
+    title: 'Motion & design interactif',
+    link: 'https://www.etapes.com/motion-design/',
   },
 ]
 
@@ -35,10 +36,10 @@ export default function DesignVeilleWidget() {
       {/* Titre + Ornement */}
       <div className="design-veille__header">
         <h3 className="design-veille__title">Veille Design</h3>
-        <div className="design-veille__subtitle">Actualités & Inspiration</div>
+        <div className="design-veille__subtitle">etapes.com — Actualités & Inspiration</div>
       </div>
 
-      {/* Grille 3 articles */}
+      {/* Rangée horizontale d'articles */}
       <div className="design-veille__grid">
         {VEILLE_DATA.map((article) => (
           <a
@@ -58,19 +59,15 @@ export default function DesignVeilleWidget() {
               <div className="design-veille__image-overlay" />
             </div>
 
-            {/* Contenu */}
-            <div className="design-veille__content">
-              <h4 className="design-veille__card-title">{article.title}</h4>
-              <p className="design-veille__description">{article.description}</p>
-              <span className="design-veille__source">{article.source}</span>
-            </div>
+            {/* Titre court sous la photo */}
+            <h4 className="design-veille__card-title">{article.title}</h4>
           </a>
         ))}
       </div>
 
-      {/* Footer — info mise à jour */}
+      {/* Footer */}
       <div className="design-veille__footer">
-        Mis à jour automatiquement tous les 3 jours par IA
+        Source : etapes.com — à mettre à jour manuellement
       </div>
     </div>
   )
