@@ -68,7 +68,7 @@ export default function App() {
           <div className="session-top">
             <div className="session-top__pill">automne</div>
             <div className="session-top__sep" />
-            <div className="session-top__star">✱</div>
+            <div className="session-top__star ornament--spin-slow">✱</div>
           </div>
 
           {/* Ligne horizontale */}
@@ -88,9 +88,9 @@ export default function App() {
             </div>
           </div>
 
-          {/* Bas : programme + mode */}
+          {/* Bas : programme */}
           <div className="session-footer">
-            Design Graphique &nbsp;// &nbsp;Mode Coop
+            Design Graphique
           </div>
         </div>
 
