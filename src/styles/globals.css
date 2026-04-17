@@ -1636,16 +1636,6 @@ a:hover { opacity: 0.8; }
 .stagger-7 { animation: clipReveal 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.65s both; }
 .stagger-8 { animation: clipReveal 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.75s both; }
 
-/* Zones parallaxe — transition fluide pour compléter l'interpolation JS */
-.grid-logo,
-.grid-session,
-.grid-left,
-.grid-center,
-.grid-right,
-.header-dates {
-  will-change: transform;
-  transition: transform 0.05s linear;
-}
 
 /* Ornament hover effect — subtil et rapide */
 .ornament-interactive {

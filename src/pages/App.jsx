@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import { useMouseParallax } from '../hooks/useMouseParallax'
 import LoadingScreen from '../components/dashboard/LoadingScreen'
 import DynamicBackground from '../components/dashboard/DynamicBackground'
 import HeaderBRO from '../components/dashboard/HeaderBRO'
@@ -38,22 +37,11 @@ function getSessionCode() {
 export default function App() {
   const [isLoading, setIsLoading] = useState(true)
   const sessionCode = getSessionCode()
-  const mouse = useMouseParallax(1)
 
   useEffect(() => {
     const timer = setTimeout(() => setIsLoading(false), 2200)
     return () => clearTimeout(timer)
   }, [])
-
-  // Profondeurs parallaxe par zone — plus la valeur est grande, plus ça bouge
-  const pxLeft   = mouse.x * -9
-  const pyLeft   = mouse.y * -6
-  const pxCenter = mouse.x * -4
-  const pyCenter = mouse.y * -3
-  const pxRight  = mouse.x * -12
-  const pyRight  = mouse.y * -8
-  const pxHeader = mouse.x * -5
-  const pyHeader = mouse.y * -4
 
   return (
     <>
@@ -64,7 +52,7 @@ export default function App() {
         {/* ===== ROW 1 : Header ===== */}
 
         {/* Col 1 : Logo vert officiel */}
-        <div className="grid-logo stagger-1" style={{ transform: `translate(${pxHeader}px, ${pyHeader}px)` }}>
+        <div className="grid-logo stagger-1">
           <div className="brand-logo">
             <img
               src="/assets/logo-design-graphique.png"
@@ -75,7 +63,7 @@ export default function App() {
         </div>
 
         {/* Col 2 : Session info — layout grille interne */}
-        <div className="grid-session glass stagger-1" style={{ transform: `translate(${pxHeader}px, ${pyHeader}px)` }}>
+        <div className="grid-session glass stagger-1">
           {/* Rangée haut : automne | étoile */}
           <div className="session-top">
             <div className="session-top__pill">automne</div>
@@ -109,12 +97,12 @@ export default function App() {
         {/* Cols 3-4 : Le chatbot occupe cette zone (row 1+2) */}
 
         {/* Col 5-6 : Dates Importantes */}
-        <DatesImportantes style={{ transform: `translate(${pxRight}px, ${pyRight}px)` }} />
+        <DatesImportantes />
 
         {/* ===== ROW 2 : Contenu principal ===== */}
 
         {/* Cols 1-2 : Colonne gauche */}
-        <div className="grid-left" style={{ transform: `translate(${pxLeft}px, ${pyLeft}px)` }}>
+        <div className="grid-left">
           <HoraireWidget />
           <div className="widgets-row">
             <ImpressionWidget />
@@ -123,7 +111,7 @@ export default function App() {
         </div>
 
         {/* Cols 3-4 : Chatbot central — B.R.O capsule est DEDANS */}
-        <div className="grid-center glass glass--no-hover stagger-4" style={{ transform: `translate(${pxCenter}px, ${pyCenter}px)` }}>
+        <div className="grid-center glass glass--no-hover stagger-4">
           <div className="chat-bg">
             <div className="chat-bg__gradient" />
           </div>
@@ -134,14 +122,16 @@ export default function App() {
         </div>
 
         {/* Cols 5-6 : Colonne droite */}
-        <div className="grid-right" style={{ transform: `translate(${pxRight}px, ${pyRight}px)` }}>
+        <div className="grid-right">
           <div className="widgets-row">
             <TutoratWidget />
             <FlexWidget />
           </div>
           <DesignVeilleWidget />
-          <MediasSociaux />
-          <ContactWidget />
+          <div className="widgets-row">
+            <MediasSociaux />
+            <ContactWidget />
+          </div>
         </div>
       </div>
     </>
