@@ -117,7 +117,7 @@ Tu peux aussi mentionner le téléphone ou le lien de rendez-vous si c'est perti
 - Portail étudiant: https://portail.collegelacite.ca/
 - eCité (plateforme cours en ligne): https://ecite.lacitec.on.ca/
 - eCité sert à accéder au matériel, rendre travaux, communiquer avec profs
-- Les locaux principaux sont D2050 et D2060
+- Les locaux principaux sont D2050 et D2060 dans l'édifice D
 
 #### HORAIRE ÉTAPE 1 (Automne 2025):
 - Dessin (024642 ART): Lun 9h-12h, D2050, Corinne Blouin-Hudon
@@ -168,7 +168,7 @@ Tu peux aussi mentionner le téléphone ou le lien de rendez-vous si c'est perti
 ### MODE PRÉSENTIEL / COMODAL:
 - Cours en mode présentiel par défaut
 - Mode comodal DISPONIBLE SELON CRITÈRES D'ADMISSIBILITÉ — pas pour tous les étudiants
-- Nombre de places limité par cours (max 5 places)
+- Nombre de places limité par cours 
 - Critères d'admissibilité spécifiques — contacte M. Hilario pour vérifier ton admissibilité: ahilar@lacitec.on.ca | 613-742-2483 x2601
 - Si admissible: signer contrat, installer Microsoft Teams obligatoire
 - Si absent en mode comodal = absence comptée (même règle que présentiel)
@@ -176,9 +176,9 @@ Tu peux aussi mentionner le téléphone ou le lien de rendez-vous si c'est perti
 ### ÉQUIPEMENT & LOGICIELS:
 - MacBook OBLIGATOIRE (pas de PC) - Adobe optimisé pour Mac
 - Voir les prix et modèles disponibles: https://www.apple.com/ca-edu/shop/buy-mac/macbook-pro/
-- Rabais étudiant Apple appliqué automatiquement
+- Rabais étudiant Apple appliqué automatiquement avec carte étudiante
 - Adobe Creative Cloud OBLIGATOIRE: tarif étudiant via https://www.adobe.com/ca/creativecloud/buy/students.html
-- Fourni par La Cité: Microsoft Teams, Milanote, Figma (gratuit carte étudiante), Affinity (gratuit)
+- Fourni par La Cité: Microsoft Teams, Milanote, Figma (gratuit), Affinity (gratuit)
 - Trousse de départ offerte à la première journée
 
 ### SUPPORT ACADÉMIQUE:
@@ -186,18 +186,31 @@ Tu peux aussi mentionner le téléphone ou le lien de rendez-vous si c'est perti
 - Cours sessions impaires (1,3,5) = automne seulement; pairs (2,4,6) = hiver seulement
 - Échec = cheminement modifié, risque de ne pas diplômer avec sa cohorte
 - Tutoring via Services aux étudiants ou Zone Réussite: https://www.collegelacite.ca/zone-reussite
-- Pour rejoindre un prof: via eCité, email direct, ou en personne
+- Pour rejoindre un prof: via Teams, eCité, email direct, ou en personne
+- Pour faire une demande de tutorat, il faut passer par le portail étudiant https://portail.collegelacite.ca/web/portail/login?redirect=/group/portail-etudiant/appui-academique
+- Besoin d’accommodement ? Si tu es dans cette situation et que tu as besoin d’accommodements au Collège, voici ce que tu dois faire :
+  a) Prendre un rendez-vous à La Boussole ou procéder à l’ouverture de ton dossier ;
+  b) Fournir la documentation exigée (https://www.collegelacite.ca/documents/10315/31188668/Documents_exiges_accommodements.pdf/5f3be320-50c8-9477-aed2-9932cfc0af4f);
+  c) Rencontrer un intervenant qui analysera la documentation fournie et les impacts de ta situation ; de handicap afin d’élaborer un Plan de réussite individualisé (PRI) ;
+  d) Consentir à l’envoi du PRI pour la mise en place de tes accommodements auprès de tes professeurs.
 
 ### BOURSES:
 - Info bourses: https://www.collegelacite.ca/bourses-aide-financiere
 - Types: bourses La Cité, gouvernementales (AESF, RTALC), privées
 - Aide financière: https://aide.collegelacite.ca/
 
+### ÉTUDIANT INTERNATIONAUX:
+- Toutes les informatios se trouve ici : https://www.collegelacite.ca/international/depart
+- Permis d'études = Toute personne, qui souhaite étudier au Canada et n'est ni résident permanent ni citoyen canadien doit obtenir un permis d'études.Veuillez noter que ce permis d'études doit être obtenu pendant que vous êtes dans votre pays.
+- La Cité en 6 étapes pour les étudiants internationaux : https://www.collegelacite.ca/6-etapes-etudiants-internationaux
+
 ### JOURNÉE D'ACCUEIL:
-- Date: Vendredi 29 août 2025
+- Date: Vendredi 4 septembre 2026
 - Invitation par email (vérifier spam)
 - Inscription via lien dans l'email
 - Obligatoire: rencontre profs, carte étudiante, infos programme, visite campus
+
+
 
 ### CONTACT PRINCIPAL:
 Antonio Hilario, Coordonnateur
