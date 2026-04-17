@@ -272,7 +272,7 @@ export default async function handler(req, res) {
     ];
 
     const groqPayload = {
-      model: "llama3-8b-8192", 
+      model: "llama-3.1-8b-instant",
       messages: formattedMessages,
       temperature: 0.7,
       max_tokens: 1024,
@@ -295,7 +295,6 @@ export default async function handler(req, res) {
       await logUnanswered(lastQuestion);
       return res.status(200).json({
         reply: "Je n'ai pas la réponse pour toi, mais tu peux envoyer un message à M. Hilario : ahilar@lacitec.on.ca",
-        _debug: { groqStatus: response.status, groqError: data },
       });
     }
 
