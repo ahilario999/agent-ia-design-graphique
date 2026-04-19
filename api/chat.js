@@ -89,7 +89,8 @@ Portfolio numérique et autopromotion — Mer 13h-16h, En ligne, Antonio Hilario
 Production d’impression numérique — Jeu 9h-12h, D2060, Patrick Ranger
 Préparation au monde du travail — Jeu 13h-16h, D2060, Patrick Ranger
 
-PAIEMENT: Paiement complet ou entente de paiement. Lien: https://www.collegelacite.ca/paiement | Calendrier scolaire: https://www.collegelacite.ca/calendrier-scolaire
+PAIEMENT / INSCRIPTION / ANNULATION DE COURS: Pour toute question de paiement, d'inscription ou pour annuler/ajouter un cours, l'étudiant doit prendre rendez-vous avec Benjamin ou Yannick via ce formulaire (sélectionner l'Institut des technologies des arts et de la communication): https://bit.ly/3y8hUqh
+Paiement complet ou entente de paiement: https://www.collegelacite.ca/paiement | Calendrier scolaire: https://www.collegelacite.ca/calendrier-scolaire
 
 COMODAL: Présentiel par défaut. Mode comodal selon critères d’admissibilité (places limitées) — contacte ahilar@lacitec.on.ca. Si admissible: contrat à signer, Teams obligatoire. Absence comodal = absence comptée.
 
