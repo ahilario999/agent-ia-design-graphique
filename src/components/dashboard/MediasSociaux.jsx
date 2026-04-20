@@ -1,18 +1,22 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
+const BEHOLD_FEED = 'https://feeds.behold.so/e8NrNqfCYUbqcKjV8Imi'
 const INSTAGRAM_URL = 'https://www.instagram.com/design_graphique_lacite/'
 const FACEBOOK_URL  = 'https://www.facebook.com/'
 const YOUTUBE_URL   = 'https://www.youtube.com/'
 
 export default function MediasSociaux() {
+  const [posts, setPosts] = useState([])
 
   useEffect(() => {
-    if (!document.querySelector('script[src="https://w.behold.so/widget.js"]')) {
-      const s = document.createElement('script')
-      s.type = 'module'
-      s.src  = 'https://w.behold.so/widget.js'
-      document.head.append(s)
-    }
+    fetch(BEHOLD_FEED)
+      .then(r => r.json())
+      .then(data => {
+        // L'API retourne un objet avec une propriété "posts"
+        const items = Array.isArray(data) ? data : data.posts
+        if (Array.isArray(items)) setPosts(items.slice(0, 3))
+      })
+      .catch(err => console.error('[Behold]', err))
   }, [])
 
   return (
@@ -66,9 +70,34 @@ export default function MediasSociaux() {
         </div>
       </div>
 
-      {/* Widget Behold — dernier post Instagram */}
-      <div className="medias__behold-wrapper">
-        <behold-widget feed-id="e8NrNqfCYUbqcKjV8Imi" />
+      {/* Grille de posts Instagram — 3 images sans branding */}
+      <div className="medias__grid">
+        {posts.length === 0 && (
+          <div className="medias__loading">Chargement...</div>
+        )}
+        {posts.map(post => {
+          const imgUrl = post.thumbnailUrl || post.mediaUrl
+          return (
+            <a
+              key={post.id}
+              href={post.permalink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="medias__post"
+              title={post.prunedCaption || post.caption || ''}
+            >
+              <img
+                src={imgUrl}
+                alt={post.prunedCaption || 'Post Instagram'}
+                className="medias__post-img"
+                loading="lazy"
+              />
+              {post.isReel && (
+                <span className="medias__reel-badge">▶</span>
+              )}
+            </a>
+          )
+        })}
       </div>
 
       {/* Footer — icônes seulement */}
