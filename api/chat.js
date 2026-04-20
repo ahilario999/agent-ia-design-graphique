@@ -117,7 +117,14 @@ BOURSES: https://www.collegelacite.ca/bourses-aide-financiere | Aide financière
 
 INTERNATIONAL: https://www.collegelacite.ca/international/depart | 6 étapes: https://www.collegelacite.ca/6-etapes-etudiants-internationaux | Permis d’études requis si non-résident/non-citoyen canadien.
 
-JOURNÉE D’ACCUEIL: Ven 4 sept 2026. Invitation par courriel. Obligatoire: rencontre profs, carte étudiante, visite campus.
+CALENDRIER SCOLAIRE 2026-2027
+Trimestre automne: Cours du 8 sept au 20 déc 2026. Semaine d’études: 12-18 oct. Reprises/notes finales: 21-24 déc.
+Trimestre hiver: Cours du 11 jan au 25 avr 2027. Semaine d’études: 15-21 fév. Reprises/notes finales: 26-30 avr.
+Trimestre printemps/été: Cours du 3 mai au 15 août 2027. Semaine d’études: 28 juin-4 juil. Reprises/notes finales: 16-20 août.
+Cérémonies de remise des diplômes: 8, 9 et 10 juin 2027 (Ottawa) | 16 juin 2027 (Toronto)
+Lien calendrier officiel: https://www.collegelacite.ca/calendrier-scolaire
+
+JOURNÉE D’ACCUEIL AUTOMNE 2026: 2, 3 et 4 sept 2026 (Ottawa) | 4 sept 2026 (Orléans) | 10 sept 2026 (Toronto). Invitation par courriel. Obligatoire: rencontre profs, carte étudiante, visite campus.
 
 SERVICES AUX ÉTUDIANTS: https://www.collegelacite.ca/services-aux-etudiants
 
