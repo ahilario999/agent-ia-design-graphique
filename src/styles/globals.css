@@ -1792,9 +1792,9 @@ a:hover { opacity: 0.8; }
   .grid-session { grid-column: 2; grid-row: 1; }
   .grid-header-spacer { display: none; }
   .grid-center  { grid-column: 1 / -1; grid-row: 2;
-                  /* Remplit tout l'écran restant après le header naturel (~175px logo carré) */
-                  min-height: calc(100vh - 210px);
-                  min-height: calc(100svh - 210px); /* svh = exclut la barre du navigateur */ }
+                  /* Hauteur fixe = scroll dans le chat, pas dans la page */
+                  height: calc(100vh - 210px);
+                  height: calc(100svh - 210px); /* svh = exclut la barre du navigateur */ }
   .header-dates { grid-column: 1 / -1; grid-row: 3; flex-direction: column; }
   .grid-left    { grid-column: 1 / -1; grid-row: 4; }
   .grid-right   { grid-column: 1 / -1; grid-row: 5; }

@@ -16,7 +16,9 @@ export default function ChatInterface() {
   const conversationRef = useRef([])
 
   useEffect(() => {
-    chatEndRef.current?.scrollIntoView({ behavior: 'smooth' })
+    // block: 'nearest' = scrolle dans le conteneur le plus proche (chat-area),
+    // pas dans la page — évite que la page entière remonte/descende sur mobile
+    chatEndRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
   }, [messages, isTyping])
 
   const handleSend = async (text) => {
