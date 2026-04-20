@@ -1157,11 +1157,8 @@ a:hover { opacity: 0.8; }
 
 /* Widget Behold — conteneur pleine hauteur */
 .medias__grid {
-  flex: 1;
-  min-height: 0;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 1fr;
   gap: 6px;
   overflow: hidden;
   border-radius: 4px;
@@ -1177,8 +1174,8 @@ a:hover { opacity: 0.8; }
   position: relative;
   overflow: hidden;
   border-radius: 4px;
+  aspect-ratio: 1;
   display: block;
-  min-height: 0;
   background: rgba(255,255,255,0.05);
 }
 
