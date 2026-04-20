@@ -124,7 +124,6 @@ a:hover { opacity: 0.8; }
 .bg-image {
   position: absolute;
   inset: -6%;
-  background-image: url('/assets/backgrounds/enhanced_edit-enhance.jpg');
   background-size: cover;
   background-position: center;
   will-change: transform;
@@ -1206,7 +1205,7 @@ a:hover { opacity: 0.8; }
   align-items: center;
   justify-content: flex-start;
   gap: 8px;
-  padding-top: 4px;
+  padding-top: 12px;
 }
 
 .medias__icons {
