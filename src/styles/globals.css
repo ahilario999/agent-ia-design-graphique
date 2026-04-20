@@ -635,7 +635,7 @@ a:hover { opacity: 0.8; }
 
 /* Dernière widgets-row dans grid-right (Médias + Contact) — s'étire verticalement */
 .grid-right > .widgets-row:last-child {
-  flex: 1;
+  flex: 2;
   align-items: stretch;
 }
 
@@ -872,7 +872,7 @@ a:hover { opacity: 0.8; }
    DESIGN VEILLE WIDGET — Actualités & Inspiration
    ============================================ */
 .design-veille {
-  flex: 2;
+  flex: 1.2;
   display: flex;
   flex-direction: column;
   gap: 12px;
