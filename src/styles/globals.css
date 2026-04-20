@@ -1792,23 +1792,13 @@ a:hover { opacity: 0.8; }
   .grid-session { grid-column: 2; grid-row: 1; }
   .grid-header-spacer { display: none; }
   .grid-center  { grid-column: 1 / -1; grid-row: 2;
-                  /* Remplit tout l'écran restant après le header */
-                  min-height: calc(100vh - 160px);
-                  min-height: calc(100svh - 160px); /* svh = exclut la barre du navigateur */ }
+                  /* Remplit tout l'écran restant après le header naturel (~175px logo carré) */
+                  min-height: calc(100vh - 210px);
+                  min-height: calc(100svh - 210px); /* svh = exclut la barre du navigateur */ }
   .header-dates { grid-column: 1 / -1; grid-row: 3; flex-direction: column; }
   .grid-left    { grid-column: 1 / -1; grid-row: 4; }
   .grid-right   { grid-column: 1 / -1; grid-row: 5; }
 
-  /* Logo compact — évite qu'il prenne la moitié de l'écran en hauteur */
-  .brand-logo {
-    width: 80px;
-    height: 80px;
-  }
-
-  /* Numéro de session moins imposant pour garder le header compact */
-  .session-main__number {
-    font-size: 2.2rem;
-  }
 
   .widgets-row { flex-direction: column; }
 
