@@ -1752,6 +1752,12 @@ a:hover { opacity: 0.8; }
     min-height: 100vh;
   }
 
+  /* FIX 1 — #root ne doit plus clipper le contenu */
+  #root {
+    height: auto;
+    overflow: visible;
+  }
+
   .grid-logo { grid-column: 1; grid-row: 1; }
   .grid-session { grid-column: 2; grid-row: 1; }
   .grid-header-spacer { display: none; }
@@ -1759,6 +1765,10 @@ a:hover { opacity: 0.8; }
   .grid-center { grid-column: 1 / -1; grid-row: 2 / 3; min-height: 55vh; }
   .grid-left { grid-column: 1 / 3; grid-row: 3; }
   .grid-right { grid-column: 3 / 5; grid-row: 3; }
+
+  /* FIX 4 — grid-left/right : ne plus couper le contenu en overflow */
+  .grid-left,
+  .grid-right { overflow: visible; }
 
   body { overflow: auto; }
 }
@@ -1781,14 +1791,32 @@ a:hover { opacity: 0.8; }
   .grid-session { grid-column: 2; grid-row: 1; }
   .grid-header-spacer { display: none; }
   .header-dates { grid-column: 1 / -1; grid-row: 2; flex-direction: column; }
-  .grid-center { grid-column: 1 / -1; grid-row: 3; min-height: 50vh; }
+  .grid-center { grid-column: 1 / -1; grid-row: 3; min-height: 60vh; }
   .grid-left { grid-column: 1 / -1; grid-row: 4; }
   .grid-right { grid-column: 1 / -1; grid-row: 5; }
 
   .widgets-row { flex-direction: column; }
 
+  /* FIX 2 — rangée Médias+Contact : hauteur fixe annulée quand empilée */
+  .grid-right > .widgets-row:last-child {
+    flex: 0 0 auto;
+    height: auto;
+  }
+
   .widget-card {
     aspect-ratio: auto;
+  }
+
+  /* FIX 3 — Design Veille : 2 colonnes au lieu de 4 sur mobile */
+  .design-veille__grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto;
+  }
+
+  /* FIX 5 — Curseur personnalisé inutile sur mobile/tactile */
+  .cursor-dot,
+  .cursor-halo {
+    display: none;
   }
 
   /* Ornements plus petits sur mobile */
