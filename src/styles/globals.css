@@ -357,7 +357,7 @@ a:hover { opacity: 0.8; }
 
 /* --- Footer : programme + mode --- */
 .session-footer {
-  font-size: var(--text-xs);
+  font-size: 0.7rem;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.06em;
