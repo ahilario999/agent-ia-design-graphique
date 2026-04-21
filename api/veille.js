@@ -9,14 +9,19 @@
 const RSS_FEEDS = [
   // ── Français ──
   {
-    label: 'Étapes',
-    url: 'https://etapes.com/feed/',
+    label: 'Créapills',
+    url: 'https://www.creapills.com/feed/',
+    fallbackImage: 'https://images.unsplash.com/photo-1636622433525-127afdf3662d?w=600&q=80',
+  },
+  {
+    label: 'Graphéine',
+    url: 'https://www.grapheine.com/feed/',
     fallbackImage: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&q=80',
   },
   {
-    label: 'Créapills',
-    url: 'https://www.creapills.com/feed',
-    fallbackImage: 'https://images.unsplash.com/photo-1636622433525-127afdf3662d?w=600&q=80',
+    label: 'Étapes',
+    url: 'https://etapes.com/feed/',
+    fallbackImage: 'https://images.unsplash.com/photo-1572044162444-ad60f128bdea?w=600&q=80',
   },
   // ── Anglais ──
   {

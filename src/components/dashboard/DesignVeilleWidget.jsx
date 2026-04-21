@@ -93,8 +93,11 @@ export default function DesignVeilleWidget() {
         </div>
       </div>
 
-      {/* Grille d'articles */}
-      <div className="design-veille__grid">
+      {/* Grille d'articles — colonnes adaptées au nb réel d'articles */}
+      <div
+        className="design-veille__grid"
+        style={{ gridTemplateColumns: `repeat(${display.length}, 1fr)` }}
+      >
         {display.map((article) => (
           <a
             key={article.id}
