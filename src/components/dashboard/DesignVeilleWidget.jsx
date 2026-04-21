@@ -1,35 +1,54 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
-// VEILLE DESIGN — Sources variées à mettre à jour manuellement
-// Structure : { id, image, title, link }
-const VEILLE_DATA = [
+// Données de secours affichées si l'API ne répond pas
+const FALLBACK_DATA = [
   {
     id: 1,
-    image: 'https://images.unsplash.com/photo-1636622433525-127afdf3662d?w=600&h=400&fit=crop',
+    image: 'https://images.unsplash.com/photo-1636622433525-127afdf3662d?w=600&q=80',
     title: 'Identités visuelles qui marquent',
-    link: 'https://www.etapes.com/identite-visuelle/',
+    link: 'https://www.itsnicethat.com/categories/graphic-design',
   },
   {
     id: 2,
-    image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=400&fit=crop',
-    title: 'Typographie : les tendances du moment',
+    image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&q=80',
+    title: 'Typographie : les tendances',
     link: 'https://www.itsnicethat.com/categories/graphic-design',
   },
   {
     id: 3,
-    image: 'https://images.unsplash.com/photo-1572044162444-ad60f128bdea?w=600&h=400&fit=crop',
+    image: 'https://images.unsplash.com/photo-1572044162444-ad60f128bdea?w=600&q=80',
     title: 'Packaging design primé 2026',
     link: 'https://www.underconsideration.com/brandnew/',
   },
   {
     id: 4,
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop',
+    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80',
     title: 'Motion & design interactif',
-    link: 'https://www.awwwards.com/',
+    link: 'https://eyeondesign.aiga.org/',
   },
 ]
 
 export default function DesignVeilleWidget() {
+  const [articles, setArticles] = useState([])
+  const [loading, setLoading]   = useState(true)
+
+  useEffect(() => {
+    fetch('/api/veille')
+      .then(r => r.json())
+      .then(data => {
+        if (data.articles && data.articles.length > 0) {
+          // Ajoute un id à chaque article pour la clé React
+          setArticles(data.articles.map((a, i) => ({ ...a, id: i + 1 })))
+        } else {
+          setArticles(FALLBACK_DATA)
+        }
+      })
+      .catch(() => setArticles(FALLBACK_DATA))
+      .finally(() => setLoading(false))
+  }, [])
+
+  const display = loading ? FALLBACK_DATA : articles
+
   return (
     <div className="design-veille glass stagger-7">
 
@@ -74,27 +93,25 @@ export default function DesignVeilleWidget() {
         </div>
       </div>
 
-      {/* Rangée horizontale d'articles */}
+      {/* Grille d'articles */}
       <div className="design-veille__grid">
-        {VEILLE_DATA.map((article) => (
+        {display.map((article) => (
           <a
             key={article.id}
             href={article.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="design-veille__card"
+            className={`design-veille__card ${loading ? 'design-veille__card--loading' : ''}`}
           >
-            {/* Image */}
             <div className="design-veille__image-wrapper">
               <img
                 src={article.image}
                 alt={article.title}
                 className="design-veille__image"
+                loading="lazy"
               />
               <div className="design-veille__image-overlay" />
             </div>
-
-            {/* Titre court sous la photo */}
             <h4 className="design-veille__card-title">{article.title}</h4>
           </a>
         ))}
