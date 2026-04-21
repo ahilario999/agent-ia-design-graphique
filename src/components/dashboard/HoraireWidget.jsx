@@ -46,15 +46,15 @@ export default function HoraireWidget() {
       <div className="horaire__header">
         <div className="horaire__title">Horaire</div>
         {/* Ornement remplissant l'espace horizontal à droite du titre */}
-        <svg className="horaire__line-ornament ornament-interactive" width="100%" height="20" viewBox="0 0 300 20" preserveAspectRatio="none" fill="none">
+        <svg className="horaire__line-ornament" width="100%" height="20" viewBox="0 0 300 20" preserveAspectRatio="none" fill="none">
           <line x1="0" y1="10" x2="300" y2="10" stroke="rgba(255,255,255,0.15)" strokeWidth="1.2"/>
-          {/* Points décorateurs espacés */}
-          <circle cx="20" cy="10" r="1.5" fill="rgba(255,255,255,0.25)"/>
-          <circle cx="80" cy="10" r="1" fill="rgba(255,255,255,0.15)"/>
-          <circle cx="140" cy="10" r="1.5" fill="rgba(255,255,255,0.2)"/>
-          <circle cx="200" cy="10" r="1" fill="rgba(255,255,255,0.15)"/>
-          <circle cx="260" cy="10" r="1.5" fill="rgba(255,255,255,0.25)"/>
-          <circle cx="290" cy="10" r="1" fill="rgba(255,255,255,0.2)"/>
+          {/* Cercles avec pulsation séquentielle gauche → droite */}
+          <circle className="horaire-dot" cx="20"  cy="10" r="3" style={{ animationDelay: '0s' }}/>
+          <circle className="horaire-dot" cx="80"  cy="10" r="3" style={{ animationDelay: '1s' }}/>
+          <circle className="horaire-dot" cx="140" cy="10" r="3" style={{ animationDelay: '2s' }}/>
+          <circle className="horaire-dot" cx="200" cy="10" r="3" style={{ animationDelay: '3s' }}/>
+          <circle className="horaire-dot" cx="260" cy="10" r="3" style={{ animationDelay: '4s' }}/>
+          <circle className="horaire-dot" cx="290" cy="10" r="3" style={{ animationDelay: '5s' }}/>
         </svg>
       </div>
 

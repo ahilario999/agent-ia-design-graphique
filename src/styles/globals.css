@@ -1612,6 +1612,21 @@ a:hover { opacity: 0.8; }
   66% { transform: translate(-2px, 1px); }
 }
 
+/* Pulsation séquentielle — ornement Horaire */
+@keyframes horaireDotPulse {
+  0%   { opacity: 0.18; transform: scale(1); }
+  6%   { opacity: 0.9;  transform: scale(1.9); }
+  18%  { opacity: 0.18; transform: scale(1); }
+  100% { opacity: 0.18; transform: scale(1); }
+}
+
+.horaire-dot {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: horaireDotPulse 6s ease-in-out infinite;
+  fill: rgba(255, 255, 255, 0.85);
+}
+
 /* Widget entrance — révélation clip-path de bas en haut */
 @keyframes clipReveal {
   from {
