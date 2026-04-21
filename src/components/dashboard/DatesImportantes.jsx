@@ -48,18 +48,18 @@ const ornaments = [
     <line x1="1" y1="18" x2="35" y2="18" stroke="rgba(255,255,255,0.3)" strokeWidth="1"/>
     <line x1="5.3" y1="5.3" x2="30.7" y2="30.7" stroke="rgba(255,255,255,0.3)" strokeWidth="1"/>
     <line x1="30.7" y1="5.3" x2="5.3" y2="30.7" stroke="rgba(255,255,255,0.3)" strokeWidth="1"/>
-    <circle cx="18" cy="18" r="2" fill="rgba(255,255,255,0.25)"/>
+    <circle cx="18" cy="18" r="2" fill="rgba(255,255,255,0.25)" className="ornament-center-dot"/>
   </svg>,
   // Cercles concentriques — pulse
   <svg width="36" height="36" viewBox="0 0 36 36" fill="none" key="o2" className="ornament-interactive">
     <circle cx="18" cy="18" r="15" stroke="rgba(255,255,255,0.25)" strokeWidth="1"/>
     <circle cx="18" cy="18" r="8" stroke="rgba(255,255,255,0.25)" strokeWidth="1"/>
-    <circle cx="18" cy="18" r="2" fill="rgba(255,255,255,0.3)"/>
+    <circle cx="18" cy="18" r="2" fill="rgba(255,255,255,0.3)" className="ornament-center-dot"/>
   </svg>,
   // Losange — float
   <svg width="36" height="36" viewBox="0 0 36 36" fill="none" key="o3" className="ornament-interactive">
     <rect x="18" y="3" width="21.2" height="21.2" rx="0" transform="rotate(45 18 3)" stroke="rgba(255,255,255,0.25)" strokeWidth="1" fill="none"/>
-    <circle cx="18" cy="18" r="2" fill="rgba(255,255,255,0.25)"/>
+    <circle cx="18" cy="18" r="2" fill="rgba(255,255,255,0.25)" className="ornament-center-dot"/>
   </svg>,
 ]
 

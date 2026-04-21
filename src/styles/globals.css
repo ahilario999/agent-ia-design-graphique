@@ -1612,19 +1612,31 @@ a:hover { opacity: 0.8; }
   66% { transform: translate(-2px, 1px); }
 }
 
-/* Pulsation séquentielle — ornement Horaire */
+/* Pulsation séquentielle — ornement Horaire (opacité fixe, scale seulement) */
 @keyframes horaireDotPulse {
-  0%   { opacity: 0.18; transform: scale(1); }
-  6%   { opacity: 0.9;  transform: scale(1.9); }
-  18%  { opacity: 0.18; transform: scale(1); }
-  100% { opacity: 0.18; transform: scale(1); }
+  0%   { transform: scale(1); }
+  6%   { transform: scale(1.9); }
+  18%  { transform: scale(1); }
+  100% { transform: scale(1); }
 }
 
 .horaire-dot {
   transform-box: fill-box;
   transform-origin: center;
   animation: horaireDotPulse 6s ease-in-out infinite;
-  fill: rgba(255, 255, 255, 0.85);
+  fill: rgba(255, 255, 255, 0.22);
+}
+
+/* Point central pulsant — widget Calendrier */
+@keyframes centerDotPulse {
+  0%, 100% { transform: scale(1);   opacity: 0.28; }
+  50%       { transform: scale(2.4); opacity: 0.75; }
+}
+
+.ornament-center-dot {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: centerDotPulse 2.8s ease-in-out infinite;
 }
 
 /* Widget entrance — révélation clip-path de bas en haut */

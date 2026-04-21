@@ -18,7 +18,7 @@ export default function TutoratWidget() {
         </svg>
       </div>
 
-      <div className="widget-card__title widget-card__title--green">Tutorat</div>
+      <div className="widget-card__title">Tutorat</div>
 
       <div className="widget-ornament-line">
         <span className="widget-ornament-line__dot" />

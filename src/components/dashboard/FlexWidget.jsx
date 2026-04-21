@@ -10,7 +10,7 @@ export default function FlexWidget() {
   return (
     <div className="widget-card glass stagger-5">
       {/* Ornement cercles concentriques — animation pulse lente */}
-      <div className="ornament ornament--top-right ornament--pulse-slow">
+      <div className="ornament ornament--top-right ornament--spin-slow">
         <svg width="50" height="50" viewBox="0 0 72 72" fill="none" className="ornament-interactive">
           <circle cx="36" cy="36" r="30" stroke="rgba(255,255,255,0.2)" strokeWidth="1.2"/>
           <circle cx="36" cy="36" r="18" stroke="rgba(255,255,255,0.2)" strokeWidth="1.2"/>
